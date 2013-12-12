@@ -1,1 +1,10 @@
 Itineraries Index
+
+<% @itineraries.each do |itinerary| %>
+<ul>
+  <li><%= itinerary.user.name %></li>
+  <li><%= itinerary.title %></li>
+  <li><img src="<%= itinerary.img_url %>" alt=""></li>
+  <li><%= itinerary.description %></li>
+</ul>
+<% end %>
