@@ -6,6 +6,7 @@ development:
   host: localhost
   username:  <%= ENV['PG_USERNAME'] %>
   password:
+  host: localhost
 
 test:
   adapter: postgresql
@@ -15,3 +16,13 @@ test:
   host: localhost
   username: <%= ENV['PG_USERNAME'] %>
   password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= File.basename(Rails.root) %>_production
+  pool: 5
+  username: <%= ENV['PG_USERNAME'] %>
+  password:
+  host: localhost
