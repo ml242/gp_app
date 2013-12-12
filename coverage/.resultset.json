@@ -451,74 +451,40 @@
         1,
         null
       ],
-      "/Users/ML/ga_wdi/projects/goin_places_app/app/controllers/itinerary_controller.rb": [
+      "/Users/ML/ga_wdi/projects/goin_places_app/app/controllers/items_controller.rb": [
         1,
         null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/ML/ga_wdi/projects/goin_places_app/app/models/itinerary.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/ML/ga_wdi/projects/goin_places_app/app/controllers/welcome_controller.rb": [
-        1,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/ML/ga_wdi/projects/goin_places_app/spec/support/database_cleaner.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        13,
-        null,
-        null,
-        null,
-        1,
         0,
         null,
         null,
-        1,
-        13,
+        0,
         null,
         null,
-        1,
-        13,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
         null,
         null
       ],
-      "/Users/ML/ga_wdi/projects/goin_places_app/spec/support/devise.rb": [
+      "/Users/ML/ga_wdi/projects/goin_places_app/app/models/item.rb": [
+        1,
+        1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1386881609
+    "timestamp": 1386881993
   }
 }
