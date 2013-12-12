@@ -20,6 +20,11 @@
   // Save bytes in the minified (but not gzipped) version:
   var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;
 
+  //use the faster Date.now if available.
+  var getTime = (Date.now || function() {
+    return new Date().getTime();
+  });
+
   // Create quick reference variables for speed access to core prototypes.
   var
     push             = ArrayProto.push,
@@ -232,7 +237,7 @@
 
   // Convenience version of a common use case of `map`: fetching a property.
   _.pluck = function(obj, key) {
-    return _.map(obj, function(value){ return value[key]; });
+    return _.map(obj, _.property(key));
   };
 
   // Convenience version of a common use case of `filter`: selecting only objects
@@ -283,7 +288,7 @@
     return result.value;
   };
 
-  // Shuffle an array, using the modern version of the 
+  // Shuffle an array, using the modern version of the
   // [Fisher-Yates shuffle](http://en.wikipedia.org/wiki/Fisher–Yates_shuffle).
   _.shuffle = function(obj) {
     var rand;
@@ -297,11 +302,12 @@
     return shuffled;
   };
 
-  // Sample **n** random values from an array.
-  // If **n** is not specified, returns a single random element from the array.
+  // Sample **n** random values from a collection.
+  // If **n** is not specified, returns a single random element.
   // The internal `guard` argument allows it to work with `map`.
   _.sample = function(obj, n, guard) {
-    if (arguments.length < 2 || guard) {
+    if (n == null || guard) {
+      if (obj.length !== +obj.length) obj = _.values(obj);
       return obj[_.random(obj.length - 1)];
     }
     return _.shuffle(obj).slice(0, Math.max(0, n));
@@ -309,12 +315,14 @@
 
   // An internal function to generate lookup iterators.
   var lookupIterator = function(value) {
-    return _.isFunction(value) ? value : function(obj){ return obj[value]; };
+    if (value == null) return _.identity;
+    if (_.isFunction(value)) return value;
+    return _.property(value);
   };
 
   // Sort the object's values by a criterion produced by an iterator.
-  _.sortBy = function(obj, value, context) {
-    var iterator = lookupIterator(value);
+  _.sortBy = function(obj, iterator, context) {
+    iterator = lookupIterator(iterator);
     return _.pluck(_.map(obj, function(value, index, list) {
       return {
         value: value,
@@ -334,9 +342,9 @@
 
   // An internal function used for aggregate "group by" operations.
   var group = function(behavior) {
-    return function(obj, value, context) {
+    return function(obj, iterator, context) {
       var result = {};
-      var iterator = value == null ? _.identity : lookupIterator(value);
+      iterator = lookupIterator(iterator);
       each(obj, function(value, index) {
         var key = iterator.call(context, value, index, obj);
         behavior(result, key, value);
@@ -367,7 +375,7 @@
   // Use a comparator function to figure out the smallest index at which
   // an object should be inserted so as to maintain order. Uses binary search.
   _.sortedIndex = function(array, obj, iterator, context) {
-    iterator = iterator == null ? _.identity : lookupIterator(iterator);
+    iterator = lookupIterator(iterator);
     var value = iterator.call(context, obj);
     var low = 0, high = array.length;
     while (low < high) {
@@ -399,7 +407,9 @@
   // allows it to work with `_.map`.
   _.first = _.head = _.take = function(array, n, guard) {
     if (array == null) return void 0;
-    return (n == null) || guard ? array[0] : slice.call(array, 0, n);
+    if ((n == null) || guard) return array[0];
+    if (n < 0) return [];
+    return slice.call(array, 0, n);
   };
 
   // Returns everything but the last entry of the array. Especially useful on
@@ -414,11 +424,8 @@
   // values in the array. The **guard** check allows it to work with `_.map`.
   _.last = function(array, n, guard) {
     if (array == null) return void 0;
-    if ((n == null) || guard) {
-      return array[array.length - 1];
-    } else {
-      return slice.call(array, Math.max(array.length - n, 0));
-    }
+    if ((n == null) || guard) return array[array.length - 1];
+    return slice.call(array, Math.max(array.length - n, 0));
   };
 
   // Returns everything but the first entry of the array. Aliased as `tail` and `drop`.
@@ -621,8 +628,9 @@
     };
   };
 
-  // Bind all of an object's methods to that object. Useful for ensuring that
-  // all callbacks defined on an object belong to it.
+  // Bind a number of an object's methods to that object. Remaining arguments
+  // are the method names to be bound. Useful for ensuring that all callbacks
+  // defined on an object belong to it.
   _.bindAll = function(obj) {
     var funcs = slice.call(arguments, 1);
     if (funcs.length === 0) throw new Error("bindAll must be passed function names");
@@ -664,12 +672,13 @@
     var previous = 0;
     options || (options = {});
     var later = function() {
-      previous = options.leading === false ? 0 : new Date;
+      previous = options.leading === false ? 0 : getTime();
       timeout = null;
       result = func.apply(context, args);
+      context = args = null;
     };
     return function() {
-      var now = new Date;
+      var now = getTime();
       if (!previous && options.leading === false) previous = now;
       var remaining = wait - (now - previous);
       context = this;
@@ -679,6 +688,7 @@
         timeout = null;
         previous = now;
         result = func.apply(context, args);
+        context = args = null;
       } else if (!timeout && options.trailing !== false) {
         timeout = setTimeout(later, remaining);
       }
@@ -695,21 +705,28 @@
     return function() {
       context = this;
       args = arguments;
-      timestamp = new Date();
+      timestamp = getTime();
       var later = function() {
-        var last = (new Date()) - timestamp;
+        var last = getTime() - timestamp;
         if (last < wait) {
           timeout = setTimeout(later, wait - last);
         } else {
           timeout = null;
-          if (!immediate) result = func.apply(context, args);
+          if (!immediate) {
+            result = func.apply(context, args);
+            context = args = null;
+          }
         }
       };
       var callNow = immediate && !timeout;
       if (!timeout) {
         timeout = setTimeout(later, wait);
       }
-      if (callNow) result = func.apply(context, args);
+      if (callNow) {
+        result = func.apply(context, args);
+        context = args = null;
+      }
+
       return result;
     };
   };
@@ -731,11 +748,7 @@
   // allowing you to adjust arguments, run code before and after, and
   // conditionally execute the original function.
   _.wrap = function(func, wrapper) {
-    return function() {
-      var args = [func];
-      push.apply(args, arguments);
-      return wrapper.apply(this, args);
-    };
+    return _.partial(wrapper, func);
   };
 
   // Returns a function that is the composition of a list of functions, each
@@ -921,7 +934,8 @@
     // from different frames are.
     var aCtor = a.constructor, bCtor = b.constructor;
     if (aCtor !== bCtor && !(_.isFunction(aCtor) && (aCtor instanceof aCtor) &&
-                             _.isFunction(bCtor) && (bCtor instanceof bCtor))) {
+                             _.isFunction(bCtor) && (bCtor instanceof bCtor))
+                        && ('constructor' in a && 'constructor' in b)) {
       return false;
     }
     // Add the first object to the stack of traversed objects.
@@ -1059,6 +1073,18 @@
   // Keep the identity function around for default iterators.
   _.identity = function(value) {
     return value;
+  };
+
+  _.constant = function(value) {
+    return function () {
+      return value;
+    };
+  };
+
+  _.property = function(key) {
+    return function(obj) {
+      return obj[key];
+    };
   };
 
   // Run a function **n** times.
@@ -1273,4 +1299,16 @@
 
   });
 
+  // AMD registration happens at the end for compatibility with AMD loaders
+  // that may not enforce next-turn semantics on modules. Even though general
+  // practice for AMD registration is to be anonymous, underscore registers
+  // as a named module because, like jQuery, it is a base library that is
+  // popular enough to be bundled in a third party lib, but not be part of
+  // an AMD load request. Those cases could generate an error when an
+  // anonymous define() is called outside of a loader request.
+  if (typeof define === 'function' && define.amd) {
+    define('underscore', [], function() {
+      return _;
+    });
+  }
 }).call(this);

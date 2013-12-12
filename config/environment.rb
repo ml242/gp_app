@@ -1,5 +1,5 @@
-# Load the Rails application.
+# Load the rails application
 require File.expand_path('../application', __FILE__)
 
-# Initialize the Rails application.
-GoinPlacesApp::Application.initialize!
+# Initialize the rails application
+GoinPlacesTestApp::Application.initialize!
