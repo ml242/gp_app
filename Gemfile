@@ -38,6 +38,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :development, :test do
+  gem 'factory_girl_rails'
   gem "rspec-rails"
   gem "guard-rspec"
   gem "capybara"
