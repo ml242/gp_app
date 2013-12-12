@@ -61,3 +61,4 @@ end
 
 gem "simplecov", :require => false, :group => :test
 gem "handlebars_assets", :group => :assets
+gem "devise"
