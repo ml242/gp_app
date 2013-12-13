@@ -18,7 +18,7 @@
 
 <h1>Add a place to your itinerary</h1>
 
-  <%= form_for(@itinerary, @item) do |f| %>
+<%= form_for(@item) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
   <%= f.submit "Add Item" %>

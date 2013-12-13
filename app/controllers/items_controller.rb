@@ -19,7 +19,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = params[:id]
+    # @item = Item.new
+    # @item = params[:id]
   end
 
   def update
