@@ -3,4 +3,9 @@ class Itinerary < ActiveRecord::Base
   belongs_to :user
   has_many :items_itineraries
   has_many :items, through: :items_itineraries
+
+  def copy
+    Itinerary.create(title: title, img_url: img_url, description: description, itinerary_parent_id: id)
+  end
+
 end

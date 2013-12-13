@@ -50,7 +50,7 @@ GoinPlacesTestApp::Application.routes.draw do
   root to: 'users#sign_in'
 
   get 'welcome/index'
-  get 'itineraries/copy'
+  get 'itineraries/:id/copy/' => 'itineraries#copy'
 
   resources :users
   resources :items

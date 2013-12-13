@@ -37,9 +37,11 @@ class ItinerariesController < ApplicationController
   end
 
   def copy
-    binding.pry
     @itinerary = Itinerary.find(params[:id])
-    # @new_copy = Itinerary.create(user_id: current_user.id, title: @itinerary.title, img_url: @itinerary.img_url, description: @itinerary.description, itinerary_parent_id: @itinerary.id)
+    @new_itinerary = @itinerary.copy
+    @new_itinerary.user = current_user
+    @new_itinerary.save
+    redirect_to @new_itinerary
   end
 
 
