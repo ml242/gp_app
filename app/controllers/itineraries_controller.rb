@@ -36,6 +36,15 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def copy
+    @itinerary = Itinerary.find(params[:id])
+    @new_itinerary = @itinerary.copy
+    @new_itinerary.user = current_user
+    @new_itinerary.save
+    redirect_to @new_itinerary
+  end
+
+
   def destroy
     @itinerary = Itinerary.find(params[:id])
     @itinerary.destroy

@@ -2,7 +2,6 @@
 <%= link_to 'Edit Itinerary', edit_itinerary_path %> | <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %> |
 <% end %>
 
-<%= link_to 'Copy itinerary', '/copy', :method => :copy, :confirm => "Do you want to copy this entire itinerary?" %>
 
 <!-- <div>
   <button><a href="/itineraries">Itineraries</a></button>
@@ -15,6 +14,7 @@
   <br>
   <%= @itinerary.description %>
 </div>
+
 
 <h1>Add a place to your itinerary</h1>
 
