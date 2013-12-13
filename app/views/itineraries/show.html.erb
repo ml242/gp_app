@@ -15,4 +15,11 @@
   <%= @itinerary.description %>
 </div>
 
-<%= link_to 'Copy itinerary', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
+
+<h1>Add a place to your itinerary</h1>
+
+  <%= form_for(@itinerary, @item) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.submit "Add Item" %>
+<% end %>
