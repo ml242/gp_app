@@ -1,9 +1,11 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Items.all
   end
 
   def new
+    @item.create[params]
   end
 
   def create
