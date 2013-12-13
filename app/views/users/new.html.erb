@@ -2,6 +2,16 @@
 
 <%= form_for(:user, :as => :user, :url => registration_path(:user)) do |f| %>
   <%#= devise_error_messages! %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div><%= f.label :name %><br />
   <%= f.text_field :name, :autofocus => true %></div>
