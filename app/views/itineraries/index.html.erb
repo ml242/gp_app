@@ -1,5 +1,7 @@
 <h1>Itineraries Index</h1>
 
+<button><%= link_to 'Post a new itinerary', new_itinerary_path %></button><br>
+
 <% @itineraries.each do |itinerary| %>
   <%= itinerary.user.name %><br>
   <%= itinerary.title %><br>

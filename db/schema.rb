@@ -14,11 +14,12 @@
 ActiveRecord::Schema.define(:version => 20131212203644) do
 
   create_table "items", :force => true do |t|
-    t.string   "item_name"
+    t.string   "name"
+    t.string   "img_url"
     t.text     "description"
-    t.integer  "item_parent_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "parent_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "items_itineraries", :force => true do |t|
