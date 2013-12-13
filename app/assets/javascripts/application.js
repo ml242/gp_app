@@ -17,6 +17,7 @@
 //= require handlebars
 //= require underscore
 //= require backbone
+//= require 'jquery.backstretch'
 //
 //= require setup
 //= require routes

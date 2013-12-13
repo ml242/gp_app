@@ -16,5 +16,16 @@
 
 <%= yield %>
 
+<% if @disable_nav %>
+<script>
+$.backstretch([
+  "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528b276e41166_1.JPG",
+  "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52850d6938211_1.JPG",
+  "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528aedf6ec3df_1.JPG",
+  "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528c2ebf28f7c_1.JPG"
+  ],
+{duration: 10000, fade: 950});
+</script>
+<% end %>
 </body>
 </html>
