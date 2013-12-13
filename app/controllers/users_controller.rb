@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new
   end
 
   def show
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.new
   end
 
   def destroy
