@@ -1,7 +1,6 @@
 <h1>Itineraries Index</h1>
 
 <% @itineraries.each do |itinerary| %>
-  <a href="/itineraries/ + <%= itinerary.user_id %> + ">
   <%= itinerary.user.name %><br>
   <%= itinerary.title %><br>
   <img src="<%= itinerary.img_url %>" width="200px"><br>

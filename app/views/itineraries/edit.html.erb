@@ -1,5 +1,5 @@
-<h1>Create new itinerary</h1>
-
+<section>
+<h1>Edit "<%= @itinerary.title %>"</h1>
   <%= form_for(@itinerary) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
@@ -13,4 +13,4 @@
   <%= f.submit "Create itinerary" %>
   <%= link_to "Cancel", itineraries_path %>
 
-<% end %>
+</section>
