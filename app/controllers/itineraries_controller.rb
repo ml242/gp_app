@@ -42,4 +42,5 @@ class ItinerariesController < ApplicationController
     redirect_to itineraries_path
   end
 
+
 end
