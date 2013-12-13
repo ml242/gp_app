@@ -372,6 +372,9 @@
         null,
         1,
         null,
+        1,
+        1,
+        null,
         null,
         null,
         null,
@@ -440,11 +443,17 @@
         null,
         1,
         null,
+        1,
         null
       ],
       "/Users/ML/ga_wdi/projects/goin_places_app/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/ML/ga_wdi/projects/goin_places_app/app/helpers/application_helper.rb": [
@@ -484,10 +493,37 @@
         1,
         null
       ],
+      "/Users/ML/ga_wdi/projects/goin_places_app/app/controllers/items_itineraries_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/ML/ga_wdi/projects/goin_places_app/app/controllers/itineraries_controller.rb": [
         1,
         null,
         1,
+        0,
         null,
         null,
         1,
@@ -518,11 +554,44 @@
         1,
         null
       ],
+      "/Users/ML/ga_wdi/projects/goin_places_app/app/controllers/users_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/ML/ga_wdi/projects/goin_places_app/app/controllers/welcome_controller.rb": [
         1,
         1,
         1,
         null,
+        null
+      ],
+      "/Users/ML/ga_wdi/projects/goin_places_app/app/models/item_itinerary.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/Users/ML/ga_wdi/projects/goin_places_app/spec/factories/factories.rb": [
@@ -670,6 +739,6 @@
         null
       ]
     },
-    "timestamp": 1386884867
+    "timestamp": 1386895636
   }
 }
