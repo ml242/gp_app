@@ -1,7 +1,9 @@
 GoinPlacesTestApp::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:sessions => :sessions,
+  :registrations => :registrations, :confirmations => :confirmations}
 
   root to: 'welcome#index'
+  root to: 'users#sign_in'
 
   get "welcome/index"
 
