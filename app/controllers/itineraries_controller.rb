@@ -36,6 +36,13 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def copy
+    binding.pry
+    @itinerary = Itinerary.find(params[:id])
+    # @new_copy = Itinerary.create(user_id: current_user.id, title: @itinerary.title, img_url: @itinerary.img_url, description: @itinerary.description, itinerary_parent_id: @itinerary.id)
+  end
+
+
   def destroy
     @itinerary = Itinerary.find(params[:id])
     @itinerary.destroy

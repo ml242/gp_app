@@ -1,4 +1,4 @@
-# == Route Map (Updated 2013-12-13 15:32)
+# == Route Map (Updated 2013-12-13 16:14)
 #
 #         new_user_session GET    /users/sign_in(.:format)        devise/sessions#new
 #             user_session POST   /users/sign_in(.:format)        devise/sessions#create
@@ -14,7 +14,16 @@
 #                          PUT    /users(.:format)                devise/registrations#update
 #                          DELETE /users(.:format)                devise/registrations#destroy
 #                     root        /                               welcome#index
+#                     root        /                               users#sign_in
 #            welcome_index GET    /welcome/index(.:format)        welcome#index
+#         itineraries_copy POST   /itineraries/copy(.:format)     itineraries#copy
+#                    users GET    /users(.:format)                users#index
+#                          POST   /users(.:format)                users#create
+#                 new_user GET    /users/new(.:format)            users#new
+#                edit_user GET    /users/:id/edit(.:format)       users#edit
+#                     user GET    /users/:id(.:format)            users#show
+#                          PUT    /users/:id(.:format)            users#update
+#                          DELETE /users/:id(.:format)            users#destroy
 #                    items GET    /items(.:format)                items#index
 #                          POST   /items(.:format)                items#create
 #                 new_item GET    /items/new(.:format)            items#new
@@ -41,6 +50,7 @@ GoinPlacesTestApp::Application.routes.draw do
   root to: 'users#sign_in'
 
   get 'welcome/index'
+  get 'itineraries/copy'
 
   resources :users
   resources :items
