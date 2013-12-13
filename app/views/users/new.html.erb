@@ -1,0 +1,21 @@
+<h2>Sign up</h2>
+
+<%= form_for(:user, :as => :user, :url => registration_path(:user)) do |f| %>
+  <%#= devise_error_messages! %>
+
+  <div><%= f.label :name %><br />
+  <%= f.text_field :name, :autofocus => true %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "users/shared/links" %>
