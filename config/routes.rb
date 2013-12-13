@@ -3,8 +3,9 @@ GoinPlacesTestApp::Application.routes.draw do
 
   root to: 'welcome#index'
 
-  get "welcome/index"
+  get 'welcome/index'
 
+  resources :users
   resources :items
   resources :itineraries
 
