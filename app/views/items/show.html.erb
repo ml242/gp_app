@@ -1,7 +1,7 @@
-<%= link_to 'Edit Item', edit_item_path %> | <%= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?" %> |
-
-<%= link_to 'Add new item', new_item_path %> |
-<%= link_to 'Items', items_path %> | <%= link_to 'Itineraries', itineraries_path %>
+<%= link_to 'Items', items_path %> | <%= link_to 'Itineraries', itineraries_path %><br><br>
+<%= link_to 'Add', new_item_path %><br><br>
+<br><br>
+<%= link_to 'Edit Item', edit_item_path %> | <%= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?" %>
 
 <h3><%= @item.name %></h1>
 <img src="<%= @item.img_url %>" width="25%"><br>
