@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
 
   end
 
@@ -27,7 +28,12 @@ class ItemsController < ApplicationController
   end
 
   def update
-
+    @item = Item.find(params[:id])
+    if @item.update_attributes(params[:item])
+      redirect_to @item
+    else
+      render :edit
+    end
   end
 
   def destroy
