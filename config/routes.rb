@@ -1,8 +1,13 @@
 GoinPlacesTestApp::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   # , :controllers => {:sessions => :sessions,
   # :registrations => :registrations, :confirmations => :confirmations}
+
+  match 'auth/:provider/callback', to: 'devise/sessions#new'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+
 
   root to: 'welcome#index'
   root to: 'users#sign_in'

@@ -29,4 +29,8 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  def dashboard
+    redirect_to :controller => :users, :action => :dashboard, :id => user.id, :anchor => "logged_in"
+  end
+
 end
