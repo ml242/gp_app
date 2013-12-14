@@ -1,25 +1,26 @@
-<% if current_user.id == @itinerary.user_id %>
-<%= link_to 'Edit Itinerary', edit_itinerary_path %> | <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %> |
-<% end %>
+<%# if current_user.id == @itinerary.user_id %>
+  <%= link_to 'Edit Itinerary', edit_itinerary_path %> | <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %> |
+
+<%# end %>
+
+  <%= link_to 'Itineraries', itineraries_path %>
+
+  <div><h1><%= @itinerary.title %></h1><br></div>
+
+  <div>
+    <img src="<%= @itinerary.img_url %>" width='25%'>
+    <br>
+    <%= @itinerary.description %>
+  </div>
+
+  <button><%= link_to 'Copy itinerary', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %></button>
 
 
-<!-- <div>
-  <button><a href="/itineraries">Itineraries</a></button>
-</div> -->
+<!-- <h1>Add a place to your itinerary</h1> -->
 
-<div><h1><%= @itinerary.title %></h1><br></div>
+  <%#= form_for(@itinerary, @item) do |f| %>
+  <%#= f.label :title %>
+  <%#= f.text_field :title %><br>
+  <%#= f.submit "Add Item" %>
+<%# end %>
 
-<div>
-  <img src="<%= @itinerary.img_url %>" width='400px'>
-  <br>
-  <%= @itinerary.description %>
-</div>
-
-
-<h1>Add a place to your itinerary</h1>
-
-<%= form_for(@item) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
-  <%= f.submit "Add Item" %>
-<% end %>

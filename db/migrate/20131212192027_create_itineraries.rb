@@ -5,7 +5,8 @@ class CreateItineraries < ActiveRecord::Migration
       t.string :title
       t.string :img_url
       t.text :description
-      t.integer :itinerary_parent_id
+      t.integer :parent_id, :null => false, :default => 0
+      t.boolean :is_copy, :default => false
       t.timestamps
     end
   end
@@ -16,7 +17,7 @@ class CreateItineraries < ActiveRecord::Migration
       t.string :title
       t.string :img_url
       t.text :description
-      t.integer :itinerary_parent_id
+      t.integer :parent_id
       t.timestamps
     end
   end

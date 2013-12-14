@@ -1,7 +1,14 @@
-this is the index page.
+<h1>Items Index Page</h1>
+
+<%= link_to 'Itineraries', itineraries_path %>
 <br>
-<% @items.each do |item| %>
-  <%= item.name %><br>
+
+<%= link_to 'Post a new item', new_item_path %></button><br>
+
+<% @rand_items.each do |item| %>
+  <h3><%= item.name %></h2><br>
   <%= item.description %><br>
-  <%= item.img_url %>
+  <a href="/items/<%= item.id %>"><img src="<%= item.img_url %>" width="20%"></a><br>
+
 <% end %>
+<hr>
