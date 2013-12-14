@@ -2,7 +2,7 @@
 
 <button><%= link_to 'Post a new item', new_item_path %></button><br>
 
-<% @items.each do |item| %>
+<% @rand_items.each do |item| %>
   <h3><%= item.name %></h2><br>
   <%= item.description %><br>
   <a href="/items/<%= item.id %>"><img src="<%= item.img_url %>" width="20%"></a><br>

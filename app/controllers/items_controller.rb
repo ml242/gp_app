@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @rand_items = @items.shuffle
   end
 
   def new
