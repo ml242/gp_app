@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :name
       t.string :img_url
       t.text :description
-      t.integer :parent_id
+      t.integer :parent_id, :null => false, :default => 0
       t.timestamps
     end
   end

@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(:version => 20131212203644) do
     t.string   "name"
     t.string   "img_url"
     t.text     "description"
-    t.integer  "parent_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "parent_id",   :default => 0, :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "items_itineraries", :force => true do |t|
@@ -34,9 +34,10 @@ ActiveRecord::Schema.define(:version => 20131212203644) do
     t.string   "title"
     t.string   "img_url"
     t.text     "description"
-    t.integer  "itinerary_parent_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.integer  "parent_id",   :default => 0,     :null => false
+    t.boolean  "is_copy",     :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "users", :force => true do |t|

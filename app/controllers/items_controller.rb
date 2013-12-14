@@ -9,25 +9,28 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = params[:id]
-    @item.save
-    redirect_to itinerary_show_path
+    @item = Item.new(params[:item])
+    if @item.save
+      redirect_to items_path
+    else
+      render :new
+    end
   end
 
   def edit
-    @item = params[:id]
+
   end
 
   def show
-    @item = params[:id]
+
   end
 
   def update
-    @item = params[:id]
+
   end
 
   def destroy
-    @item = nil
+
   end
 
 end
