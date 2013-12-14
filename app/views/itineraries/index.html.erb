@@ -4,7 +4,7 @@
 
 <button><%= link_to 'Post a new itinerary', new_itinerary_path %></button><br>
 
-<% @itineraries.each do |itinerary| %>
+<% @rand_itineraries.each do |itinerary| %>
   "<%= itinerary.title %>" by <%= itinerary.user.name %><br>
   <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="70%"></a><br>
   <%= itinerary.is_copy %>
