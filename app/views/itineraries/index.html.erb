@@ -6,6 +6,6 @@
 
 <% @rand_itineraries.each do |itinerary| %>
   "<%= itinerary.title %>" by <%= itinerary.user.name %><br>
-  <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="70%"></a><br>
+  <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="30%"></a><br>
   <%= itinerary.is_copy %>
 <% end %>

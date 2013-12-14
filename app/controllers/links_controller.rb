@@ -1,4 +1,4 @@
-# class ItemsItinerariesController < ApplicationController
+class LinksController < ApplicationController
 
 #   def index
 #   end
@@ -21,4 +21,4 @@
 #   def destroy
 #   end
 
-# end
+end

@@ -22,6 +22,7 @@ class ItinerariesController < ApplicationController
   def show
     id = params[:id]
     @itinerary = Itinerary.find(id)
+    @items = @itinerary.items
   end
 
   def edit
