@@ -16,6 +16,5 @@ Parent-id: <%= @item.parent_id %><br>
 <%= form_tag do %>
   <%= label_tag(:itinerary_id, "Add to itinerary:") %>
   <%= text_field_tag(:itinerary_id) %>
-  <% binding.pry %>
   <%= submit_tag "Add" %>
 <% end %>
