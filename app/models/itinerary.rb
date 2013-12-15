@@ -8,4 +8,9 @@ class Itinerary < ActiveRecord::Base
     Itinerary.create(title: title, img_url: img_url, description: description, parent_id: id, is_copy: true)
   end
 
+  def add_item
+    itinerary = Itinerary.find(id)
+    itinerary.items << item
+  end
+
 end

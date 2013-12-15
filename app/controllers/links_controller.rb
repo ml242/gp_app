@@ -6,8 +6,9 @@ class LinksController < ApplicationController
 #   def new
 #   end
 
-#   def create
-#   end
+  def create
+    @link = Link.new
+  end
 
 #   def edit
 #   end
