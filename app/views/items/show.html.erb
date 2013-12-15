@@ -5,16 +5,7 @@
 
 <h3><%= @item.name %></h1>
 <img src="<%= @item.img_url %>" width="25%"><br>
-<%= @item.description %><br>
-Parent-id: <%= @item.parent_id %><br>
-
-<!-- <input type="text" placeholder="Itinerary Title" name="title">
-
-<button>Add to itinerary</button> -->
-
-
-<%= form_tag do %>
-  <%= label_tag(:itinerary_id, "Add to itinerary:") %>
-  <%= text_field_tag(:itinerary_id) %>
-  <%= submit_tag "Add" %>
-<% end %>
+Description: <%= @item.description %><br>
+<button>Add <%= @item.name %> to:</button>
+<% binding.pry %>
+<input type="text" name="add-to-itinerary" placeholder="itinerary name">

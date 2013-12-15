@@ -39,6 +39,14 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  # def add_item
+  #   @itinerary = Itinerary.find(params[:id])
+  # end
+
+  # def update_with_item
+  #   @itinerary = Itinerary.find(params[:id])
+  # end
+
   def copy
     @itinerary = Itinerary.find(params[:id])
     @new_itinerary = @itinerary.copy
