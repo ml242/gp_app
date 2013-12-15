@@ -1,16 +1,18 @@
-<h2>Welcome to Goin Places</h2>
+<div class="login-form">
 
-<%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
-<div><%= f.text_field :email, :placeholder => 'Enter your email address', :class => 'login-form', :size => 50 %>
+  <h2>Welcome to Goin Places</h2>
+  <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
+  <div><%= f.text_field :email, :placeholder => 'Enter your email address', :size => 50 %>
 
-  <br />
-  <div>
-    <%= f.password_field :password, :placeholder => 'Enter your password', :class => 'login-form', :size => 50 %></div>
-
+    <br />
     <div>
-     <%= button_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :display => 'inline-block' %><%= f.submit "Login", :display => 'inline-block' %></div>
+      <%= f.password_field :password, :placeholder => 'Enter your password', :size => 50 %></div>
 
-     <% end %>
+      <div>
+       <%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %> <%= f.submit "Login" %></div>
+
+       <% end %>
+     </div>
 
      <%#= render "users/shared/links" %>
 

@@ -1,7 +1,11 @@
 /* stuff goes here */
 
-.login-form input {
-  width: 50%;
-  height: 50%;
+.login-form {
+  background-color: rgba(255, 255, 255, .5);
+  border: 1px solid grey;
+  margin: 0 auto;
+  text-align: center;
+  width: 25%;
+  border-radius: 6%;
   /* Or fill in whatever width and height values you need */
 }
