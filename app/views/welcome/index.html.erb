@@ -1,3 +1,4 @@
+
 <div class="sign-in">
   <% if user_signed_in? %>
     <li><%= link_to('Edit registration', edit_user_registration_path) %></li>
@@ -8,23 +9,18 @@
   <% end %>
 </div>
 
-<h2>Sign in</h2>
+<div class="login-form">
 
-<%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
-  <div><%= f.email_field :email, :placeholder => 'Enter your email address' %>
+  <h2>Welcome to Goin Places</h2>
+  <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
+    <div><%= f.text_field :email, :placeholder => 'Enter your email address', :size => 50 %><br />
+    <div>
+    <%= f.password_field :password, :placeholder => 'Enter your password', :size => 50 %></div>
 
+    <div><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %> <%= f.submit "Login" %></div>
+  <% end %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <%# if devise_mapping.rememberable? -%>
-    <!-- <div> --><%#= f.check_box :remember_me %> <%#= f.label :remember_me %><!-- </div> -->
-  <%# end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-
-<% end %>
+</div>
 
 <%#= render "users/shared/links" %>
 
