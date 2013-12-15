@@ -22,12 +22,23 @@
     </div>
   </div>
 
-<div class="fb-share-button" data-href="http://www.goinplac.es<%= "/itineraries/#{@itinerary.id}" %> "></div>
+<!--  basic working button <div class="fb-share-button" data-href="http://goinplac.es<%#= "/itineraries/#{@itinerary.id}" %> "></div> -->
+
+<div class="fb-share-button" data-href="  http://goinplac.es<%= "/itineraries/#{@itinerary.id}" %> "></div>
 
   <button><%= link_to 'Copy itinerary', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %></button>
-
 <%# if current_user.id == @itinerary.user_id %>
   <button><%= link_to 'Add an item to current itinerary', "/itineraries/#{@itinerary.id}/add", :method => :get %></button>
 <%# end %>
+
+
+
+
+
+
+
+
+
+
 
 

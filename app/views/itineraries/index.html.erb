@@ -1,11 +1,9 @@
 <h1>Itineraries Index</h1>
 
+<%= render 'slideshow' %>
+
 <button><%= link_to 'Items', items_path %></button>
 
 <button><%= link_to 'Post a new itinerary', new_itinerary_path %></button><br>
 
-<% @rand_itineraries.each do |itinerary| %>
-  "<%= itinerary.title %>" by <%= itinerary.user.name %><br>
-  <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="30%"></a><br>
-  <%= itinerary.is_copy %>
-<% end %>
+
