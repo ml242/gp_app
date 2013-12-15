@@ -1,27 +1,17 @@
-<div class="login-container">
-  <div class="sign-in">
-    <% if user_signed_in? %>
-      <li><%= link_to('Edit registration', edit_user_registration_path) %></li>
-      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-    <% else %>
-      <li><%= link_to('Login', new_user_session_path)  %></li>
-      <li><%= link_to('Register', new_user_path)  %></li>
-    <% end %>
-  </div>
+<div class="login-form">
 
-  <div class="login-form">
+  <h2>Welcome to Goin Places</h2>
+  <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
+  <div><%= f.text_field :email, :placeholder => 'Enter your email address', :size => 50 %>
 
-    <h2>Welcome to Goin Places</h2>
-    <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
-      <div><%= f.text_field :email, :placeholder => 'Enter your email address', :size => 50 %><br />
-      <div>
+    <br />
+    <div>
       <%= f.password_field :password, :placeholder => 'Enter your password', :size => 50 %></div>
 
-      <div><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %> <%= f.submit "Login" %></div>
-    <% end %>
+      <div>
+       <%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %> <%= f.submit "Login" %></div>
 
-  </div>
-</div>
+       <% end %>
+     </div>
 
-<%#= render "users/shared/links" %>
-
+     <%#= render "users/shared/links" %>
