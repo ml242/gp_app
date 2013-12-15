@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @rand_items = @items.shuffle
   end
 
   def new
@@ -9,26 +10,36 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = params[:id]
-    @item.save
-    redirect_to itinerary_show_path
+    @item = Item.new(params[:item])
+    if @item.save
+      redirect_to items_path
+    else
+      render :new
+    end
   end
 
   def edit
-    @item = params[:id]
+    @item = Item.find(params[:id])
+
   end
 
   def show
-    # @item = Item.new
-    # @item = params[:id]
+    @item = Item.find(params[:id])
   end
 
   def update
-    @item = params[:id]
+    @item = Item.find(params[:id])
+    if @item.update_attributes(params[:item])
+      redirect_to @item
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @item = nil
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path
   end
 
 end

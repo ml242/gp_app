@@ -16,9 +16,7 @@ GoinPlacesTestApp::Application.routes.draw do
   get 'itineraries/:id/copy/' => 'itineraries#copy'
 
   resources :users
-
-  resources :itineraries do
-    resources :items
-  end
+  resources :itineraries
+  resources :items
 
 end

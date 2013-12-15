@@ -3,6 +3,7 @@ class ItinerariesController < ApplicationController
 
   def index
     @itineraries = Itinerary.all
+    @rand_itineraries = @itineraries.shuffle
   end
 
   def new
