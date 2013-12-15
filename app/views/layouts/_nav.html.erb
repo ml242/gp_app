@@ -1,8 +1,12 @@
 <% if user_signed_in? %>
-<li>
+<div>
   <%= link_to('Home', itineraries_path, :method => :get) %>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-</li>
+</div>
+<div>
+  <%= link_to 'Itineraries', itineraries_path %>
+  <%= link_to 'Items', items_path %>
+</div>
 <%# else %>
 <!-- <li> -->
   <%#= link_to('Login', new_user_session_path)  %>
