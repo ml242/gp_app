@@ -9,6 +9,7 @@ gem 'pg'
 gem 'backstretch-rails'
 gem 'omniauth-facebook'
 # gem 'omniauth-twitter'
+gem 'bxslider-rails'
 
 
 # Gems used only for assets and not required
