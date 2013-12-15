@@ -1,6 +1,6 @@
-class CreateItemsItineraries < ActiveRecord::Migration
+class CreateLinks < ActiveRecord::Migration
   def change
-    create_table :items_itineraries do |t|
+    create_table :links do |t|
       t.integer :item_id
       t.integer :itinerary_id
       t.timestamps
@@ -8,8 +8,8 @@ class CreateItemsItineraries < ActiveRecord::Migration
   end
 
   def down
-    drop_table :items_itineraries do |t|
-      t.integer :ktem_id
+    drop_table :links do |t|
+      t.integer :item_id
       t.integer :itinerary_id
       t.timestamps
     end

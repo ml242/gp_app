@@ -1,4 +1,4 @@
-# class ItemsItinerariesController < ApplicationController
+class LinksController < ApplicationController
 
 #   def index
 #   end
@@ -6,8 +6,9 @@
 #   def new
 #   end
 
-#   def create
-#   end
+  def create
+    @link = Link.new
+  end
 
 #   def edit
 #   end
@@ -21,4 +22,4 @@
 #   def destroy
 #   end
 
-# end
+end

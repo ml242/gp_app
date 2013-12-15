@@ -1,4 +1,4 @@
-class Item_itinerary < ActiveRecord::Base
+class Link < ActiveRecord::Base
   belongs_to :itinerary
   belongs_to :item
 end

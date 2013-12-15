@@ -22,13 +22,6 @@ ActiveRecord::Schema.define(:version => 20131214181926) do
     t.datetime "updated_at",                 :null => false
   end
 
-  create_table "items_itineraries", :force => true do |t|
-    t.integer  "item_id"
-    t.integer  "itinerary_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "itineraries", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
@@ -38,6 +31,13 @@ ActiveRecord::Schema.define(:version => 20131214181926) do
     t.boolean  "is_copy",     :default => false
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "links", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "itinerary_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -18,5 +18,6 @@ GoinPlacesTestApp::Application.routes.draw do
   resources :users
   resources :itineraries
   resources :items
+  resources :links
 
 end
