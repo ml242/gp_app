@@ -1,1 +1,7 @@
 /* stuff goes here */
+
+.login-form input {
+  width: 50%;
+  height: 50%;
+  /* Or fill in whatever width and height values you need */
+}

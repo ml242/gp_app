@@ -8,7 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/nav' unless @disable_nav %>
+
+<% if current_user %>
+<%= render 'layouts/nav' %>
+<% end %>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <div id="fb-root"></div>

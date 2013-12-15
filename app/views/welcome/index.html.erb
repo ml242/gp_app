@@ -1,36 +1,16 @@
-<% if user_signed_in? %>
-<li>
-  <%= link_to('Edit registration', edit_user_registration_path) %>
-</li>
-<li>
-<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-</li>
-<% else %>
-<li>
-  <%= link_to('Login', new_user_session_path)  %>
-</li>
-<li>
-  <%= link_to('Register', new_user_path)  %>
-</li>
-<% end %>
-
-<h2>Sign in</h2>
+<h2>Welcome to Goin Places</h2>
 
 <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
-  <div><%= f.email_field :email, :placeholder => 'Enter your email address' %>
+<div><%= f.text_field :email, :placeholder => 'Enter your email address', :class => 'login-form', :size => 50 %>
 
+  <br />
+  <div>
+    <%= f.password_field :password, :placeholder => 'Enter your password', :class => 'login-form', :size => 50 %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+    <div>
+     <%= button_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :display => 'inline-block' %><%= f.submit "Login", :display => 'inline-block' %></div>
 
-  <%# if devise_mapping.rememberable? -%>
-    <!-- <div> --><%#= f.check_box :remember_me %> <%#= f.label :remember_me %><!-- </div> -->
-  <%# end -%>
+     <% end %>
 
-  <div><%= f.submit "Sign in" %></div>
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-
-<% end %>
-
-<%#= render "users/shared/links" %>
+     <%#= render "users/shared/links" %>
 
