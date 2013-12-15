@@ -4,7 +4,7 @@ GoinPlacesTestApp::Application.routes.draw do
   # , :controllers => {:sessions => :sessions,
   # :registrations => :registrations, :confirmations => :confirmations}
 
-  match 'auth/:provider/callback', to: 'devise/sessions#new'
+  match 'auth/:provide/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
 

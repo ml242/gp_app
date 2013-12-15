@@ -266,7 +266,6 @@ DEPENDENCIES
   jasmine
   jquery-rails
   meta_request
-  omniauth
   omniauth-facebook
   pg
   pry-rails

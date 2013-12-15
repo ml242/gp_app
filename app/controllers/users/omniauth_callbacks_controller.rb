@@ -1,6 +1,17 @@
-class UsersController < ApplicationController
-# class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+# class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  # skip_before_filter :authenticate
+  # def all
+  #   user = User.from_omniauth(request.env["omniauth.auth"])
+  #   if user.persisted?
+  #     flash.notice = "Signed in!"
+  #     sign_in_and_redirect user
+  #   else
+  #     session["devise.user_attributes"] = user.attributes
+  #     redirect_to new_user_registration_url
+  #   end
+  # end
+  # alias_method :facebook, :all
   def facebook
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
@@ -14,37 +25,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def sign_in
 
-  end
-
-  def index
-    # @users = User.all
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-    @user = User.new
-  end
-
-  def destroy
-  end
-
-  def dashboard
-    redirect_to :controller => :users, :action => :dashboard, :id => user.id, :anchor => "logged_in"
-  end
 
 end
