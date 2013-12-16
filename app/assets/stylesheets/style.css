@@ -1,0 +1,23 @@
+.login-page-container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.login-form-box {
+  background-color: rgba(0,0,0,0.15);
+  width: 600px;
+  margin-left: 130px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.login-form-box h2 {
+  font-size: 50px;
+  color: #00000F;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.login-form {
+  margin-left: 30%;
+}
