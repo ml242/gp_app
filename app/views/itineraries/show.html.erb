@@ -1,33 +1,34 @@
-<%# if current_user.id == @itinerary.user_id %>
-  <%= link_to 'Edit Itinerary', edit_itinerary_path %> | <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %> |
+<% if current_user.id == @itinerary.user_id %>
+<%= link_to 'Edit Itinerary', edit_itinerary_path %> | <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %>
+<% end %>
 
-<%# end %>
+<%= link_to 'Itineraries', itineraries_path %>
 
-  <%= link_to 'Itineraries', itineraries_path %>
+<div><h1><%= @itinerary.title %></h1><br></div>
 
-  <div><h1><%= @itinerary.title %></h1><br></div>
+<div>
+  <img src="<%= @itinerary.img_url %>" width='60%'>
+  <br>
+  <%= @itinerary.description %><br>
 
   <div>
-    <img src="<%= @itinerary.img_url %>" width='60%'>
-    <br>
-    <%= @itinerary.description %><br>
-
-    <div>
-  <!-- gets the items for each itinerary here -->
-      <% @items.each do |item| %>
-        <%= item.name %><br>
-        <%= item.description %><br>
-        <img src="<%= item.img_url %>" width="25%">
-      <% end %>
-    </div>
+    <!-- gets the items for each itinerary here -->
+    <% @items.each do |item| %>
+    <%= item.name %><br>
+    <%= item.description %><br>
+    <img src="<%= item.img_url %>" width="25%">
+    <% end %>
   </div>
+</div>
 
 <div class="fb-share-button" data-href="http://www.goinplac.es<%= "/itineraries/#{@itinerary.id}" %> "></div>
 
-  <button><%= link_to 'Copy itinerary', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %></button>
+<% if current_user.id != @itinerary.user_id %>
+<button><%= link_to 'Copy itinerary', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %></button>
+<% end %>
 
-<%# if current_user.id == @itinerary.user_id %>
-  <button><%= link_to 'Add an item to current itinerary', "/itineraries/#{@itinerary.id}/add", :method => :get %></button>
-<%# end %>
+<% if current_user.id == @itinerary.user_id %>
+<button><%= link_to 'Add an item to current itinerary', "/itineraries/#{@itinerary.id}/add", :method => :get %></button>
+<% end %>
 
 

@@ -12,10 +12,12 @@ Description: <%= @item.description %><br>
 
 <%# itineraries_array = Itinerary.all.map { |itinerary| [itinerary.title, itinerary.id] %>
 
+
 <%#= form_for([@itinerary]) do |f| %>
 <%#= f.label "To which itinerary do you want to add?" %>
 
 <%#= f.select options_for_select(itineraries_array) %>
 <%#= f.submit %>
 
-<%= options_form_collection_for_select(Itinerary.all, :id, :title) %>
+<%#= options_form_collection_for_select(Itinerary.all, :id, :title) %>
+
