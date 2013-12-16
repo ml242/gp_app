@@ -13,9 +13,13 @@ GoinPlacesTestApp::Application.routes.draw do
 
   get 'welcome/index'
   get 'itineraries/:id/copy/' => 'itineraries#copy'
+  get 'itineraries/:id/add/' => 'itineraries#add'
+
 
   resources :users
-  resources :itineraries
+  resources :itineraries do
+    resources :items
+  end
   resources :items
   resources :links
 

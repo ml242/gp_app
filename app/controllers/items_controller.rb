@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @itineraries = Itinerary.all
   end
 
   def update
