@@ -5,7 +5,7 @@
 
     <div class="login-form">
       <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
-        <%= f.text_field :emai, :placeholder => 'Enter your email address', :size => 50, :required => true %><br />
+        <%= f.text_field :email, :placeholder => 'Enter your email address', :size => 50, :required => true %><br />
         <%= f.password_field :password, :placeholder => 'Enter your password', :size => 50, :required => true %><br />
         <div class="login-btn"><%= f.submit "Login" %></div>
 
