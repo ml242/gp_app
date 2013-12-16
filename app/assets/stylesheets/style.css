@@ -1,0 +1,16 @@
+a:link, a:visited, a:active {
+  text-decoration: none;
+}
+
+/*.facebook-login {
+  margin: 0 auto;
+}*/
+
+.login-form {
+  margin-left: 0 auto;
+  border: 1px solid black;
+}
+
+.signin-container {
+  margin: 0;
+}
