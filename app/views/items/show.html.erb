@@ -6,5 +6,16 @@
 <h3><%= @item.name %></h1>
 <img src="<%= @item.img_url %>" width="25%"><br>
 Description: <%= @item.description %><br>
-<button>Add <%= @item.name %> to:</button>
-<input type="text" name="add-to-itinerary" placeholder="itinerary name">
+
+<!-- <button>Add <%= @item.name %> to:</button>
+<input type="select" name="add-to-itinerary" options_for_select=""> -->
+
+
+<%= form_for([@itinerary]) do |f| %>
+<%= f.label "To which itinerary do you want to add?" %>
+<%# TODO make dropdown which pulls routes from AR ascends to add the specific info %>
+<%= f.select options_for_select(@itineraries.title) %>
+
+<br><br>
+<%= f.submit "Add Item" %>
+<% end %>
