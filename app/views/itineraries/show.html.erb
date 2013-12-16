@@ -31,11 +31,3 @@
 <button><%= link_to 'Add an item to current itinerary', "/itineraries/#{@itinerary.id}/add", :method => :get %></button>
 <% end %>
 
-<div><h3>Search for a location for your trip</h3></div>
-<ul>
-  <% for location in @location.nearbys(10) %>
-    <li><%= link_to location.address, location %> (<%= location.distance.round(2) %> miles)</li>
-  <% end %>
-</ul>
-
-

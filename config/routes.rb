@@ -20,6 +20,7 @@ GoinPlacesTestApp::Application.routes.draw do
   resources :itineraries do
     resources :items
   end
+
   resources :items
   resources :links
 

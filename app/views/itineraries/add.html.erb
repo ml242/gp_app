@@ -1,12 +1,14 @@
 <%= form_for(@item) do |f| %>
-<%= f.label :name %><br>
-<%= f.text_field :name %><br>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
 
-<%= f.label :description %><br>
-<%= f.text_field :description %><br>
+  <%= f.label :description %><br>
+  <%= f.text_field :description %><br>
 
-<%= f.label :img_url %><br>
-<%= f.text_field :img_url %><br>
+  <%= f.label :img_url %><br>
+  <%= f.text_field :img_url %><br>
 
-<%= f.submit "Add item" %></div>
+  <%= hidden_field_tag :itinerary_id %>
+
+  <%= f.submit "Add item" %></div>
 <% end %>
