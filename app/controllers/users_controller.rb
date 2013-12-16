@@ -31,6 +31,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @itineraries = Itinerary.where( :user_id => current_user )
+    @items = Item.where( :user_id => current_user )
   end
 
   def edit
