@@ -7,6 +7,18 @@
 
 <br>
 
+<!-- We can take these out or add different sliders -->
+
+<div class="deetz-index">
+<% @rand_itineraries.each do |itinerary| %>
+
+  <h3><%= itinerary.title %></h2><br>
+
+  <%= itinerary.description %><br>
+  <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>"></a><br>
+<% end %>
+</div>
+
 <button><%= link_to 'Post a new itinerary', new_itinerary_path %></button><br>
 
 

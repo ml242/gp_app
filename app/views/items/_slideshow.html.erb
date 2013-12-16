@@ -3,12 +3,10 @@
 
   <% @rand_items.each do |item| %>
 
-  <li class="images"><%= item.name %><br>
+  <%= item.name %><br>
 
-    <a href="/items/<%= item.id %>"> <img src="<%= item.img_url %>" width="30%"></a><br>
+    <a href="/items/<%= item.id %>"> <img id="bx-center" src="<%= item.img_url %>" width="30%"></a><br>
 
-    <!-- <a href="/itineraries/<%#= itinerary.id %>"><img src="<%#= item.img_url %>" width="30%"></a><br> -->
-    <%#= itinerary.is_copy %></li>
   <% end %>
 
   </ul>
