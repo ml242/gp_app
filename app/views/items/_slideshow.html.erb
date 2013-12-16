@@ -1,13 +1,12 @@
 <% unless @disable_nav == true %>
-
 <ul class="bxslider">
-<!--   <li>Slide one content</li>
-  <li>Slide two content</li>
-  <li>Slide three content</li>
-  <li>And so on...</li> -->
+
   <% @rand_items.each do |item| %>
-  <li class="images"><%= item.name %> <%#= item.user.name %><br>
-    <img src="<%= item.img_url %>">
+
+  <li class="images"><%= item.name %><br>
+
+    <a href="/items/<%= item.id %>"> <img src="<%= item.img_url %>" width="30%"></a><br>
+
     <!-- <a href="/itineraries/<%#= itinerary.id %>"><img src="<%#= item.img_url %>" width="30%"></a><br> -->
     <%#= itinerary.is_copy %></li>
   <% end %>
