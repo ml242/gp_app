@@ -10,18 +10,20 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @item = Item.new(params[:item])
     if params["itinerary_id"]
       @item.itineraries << Itinerary.find(params["itinerary_id"])
       @item.save
-    end
-    if @item.save
+      redirect_to   "/itineraries/#{params[:itinerary_id]}"
+      # redirect_to ('/itineraries/"#{params[itinerary_id]}"')
+    elsif
+      @item.save
       redirect_to items_path
     else
       render :new
     end
   end
+
 
   def edit
     @item = Item.find(params[:id])

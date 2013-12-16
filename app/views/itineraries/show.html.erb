@@ -28,6 +28,6 @@
 <% end %>
 
 <% if current_user.id == @itinerary.user_id %>
-<button><%= link_to 'Add an item to current itinerary', "/itineraries/#{@itinerary.id}/add", :method => :get %></button>
+<button><%= link_to 'Add an item to current itinerary', "/itineraries/#{@itinerary.id}/items/new", :method => :get %></button>
 <% end %>
 
