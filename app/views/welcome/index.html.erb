@@ -1,17 +1,22 @@
-<div class="login-form">
+<div class="login-page-container">
+  <div class="login-form-box">
 
-  <h2>Welcome to Goin Places</h2>
-  <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
-  <div><%= f.text_field :email, :placeholder => 'Enter your email address', :size => 50, :required => true %>
+    <h2>Welcome to Goin Places</h2>
 
-    <br />
-    <div>
-      <%= f.password_field :password, :placeholder => 'Enter your password', :size => 50, :required => true %></div>
+    <div class="login-form">
+      <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
+        <%= f.text_field :emai, :placeholder => 'Enter your email address', :size => 50, :required => true %><br />
+        <%= f.password_field :password, :placeholder => 'Enter your password', :size => 50, :required => true %><br />
+        <div class="login-btn"><%= f.submit "Login" %></div>
 
-      <div>
-       <%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %> <%= f.submit "Login" %></div>
+        <div class="facebook-login">
+          <a href="http://localhost:3000/users/auth/facebook"><img src="http://www.elterre.com/images/connect/facebook.png" width="65%"></a>
+          <%#= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %>
+        </div>
+      <% end %>
+    </div>
 
-       <% end %>
-     </div>
+  </div>
+</div>
 
-     <%#= render "users/shared/links" %>
+<%#= render "users/shared/links" %>
