@@ -82,6 +82,7 @@ GEM
       multipart-post (~> 1.2.0)
     ffi (1.9.3)
     formatador (0.2.4)
+    geocoder (1.1.9)
     guard (2.2.4)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -266,6 +267,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  geocoder
   guard-rspec
   handlebars_assets
   jasmine

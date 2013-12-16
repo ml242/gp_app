@@ -11,6 +11,7 @@ gem 'omniauth-facebook'
 # gem 'omniauth-twitter'
 gem 'bxslider-rails'
 gem 'simple_form'
+gem 'geocoder'
 
 
 # Gems used only for assets and not required
