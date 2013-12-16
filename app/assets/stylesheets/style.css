@@ -21,3 +21,12 @@
 .login-form {
   margin-left: 30%;
 }
+
+.login-btn {
+  margin-left: 50px;
+  font-size: 25px;
+}
+
+.facebook-login {
+  margin: 10px;
+}

@@ -7,9 +7,10 @@
       <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
         <%= f.text_field :emai, :placeholder => 'Enter your email address', :size => 50, :required => true %><br />
         <%= f.password_field :password, :placeholder => 'Enter your password', :size => 50, :required => true %><br />
-        <%= f.submit "Login" %>
+        <div class="login-btn"><%= f.submit "Login" %></div>
 
         <div class="facebook-login">
+          <img src="http://www.elterre.com/images/connect/facebook.png" width="65%">
           <%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %>
         </div>
       <% end %>
