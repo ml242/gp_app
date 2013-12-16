@@ -2,8 +2,13 @@ class ItinerariesController < ApplicationController
 
 
   def index
-    @itineraries = Itinerary.all
-    @rand_itineraries = @itineraries.shuffle
+
+    if params[:search].present?
+      @itineraries = Itinerary.near(params[:search], 50, :order => :distance)
+    else
+      @itineraries = Itinerary.all
+    end
+      @rand_itineraries = @itineraries.shuffle
   end
 
   def new

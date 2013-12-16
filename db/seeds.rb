@@ -9,7 +9,7 @@
 
 u1 = User.create(name: "Matt", email: "matt@matt.com", password: "password", password_confirmation: "password")
 u1 = User.create(name: "Kat", email: "kat@kat.com", password: "password", password_confirmation: "password")
-itinerary1 = Itinerary.create(user_id: 1, title: "China", img_url: "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528ef22a4cd0b_1.JPG", description: "Want to see that Great Wall")
-itinerary2 = Itinerary.create(user_id: 2, title: "Pittsburgh", img_url: "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528e297be299b_1.JPG", description: "Road Trip")
-item1 = Item.create(name: "Joe's Pizza", description: "best pizza in town", img_url: "http://www.nycgo.com/images/uploadedimages/devnycvisitcom/venue/joe'spizza_v1_460x285.jpg" )
-item2 = Item.create(name: "Sukiyabashi Jiro", description: "subject of Jiro Dreams of Sushi", img_url: "http://eataduck.files.wordpress.com/2010/08/sukiyabashi-jiro-bar.jpg")
+# itinerary1 = Itinerary.create(user_id: 1, title: "China", img_url: "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528ef22a4cd0b_1.JPG", description: "Want to see that Great Wall")
+# itinerary2 = Itinerary.create(user_id: 2, title: "Pittsburgh", img_url: "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528e297be299b_1.JPG", description: "Road Trip")
+# item1 = Item.create(name: "Joe's Pizza", description: "best pizza in town", img_url: "http://www.nycgo.com/images/uploadedimages/devnycvisitcom/venue/joe'spizza_v1_460x285.jpg" )
+# item2 = Item.create(name: "Sukiyabashi Jiro", description: "subject of Jiro Dreams of Sushi", img_url: "http://eataduck.files.wordpress.com/2010/08/sukiyabashi-jiro-bar.jpg")

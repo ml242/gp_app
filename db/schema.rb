@@ -16,17 +16,22 @@ ActiveRecord::Schema.define(:version => 20131214181926) do
   create_table "items", :force => true do |t|
     t.string   "name"
     t.string   "img_url"
+    t.string   "address"
     t.text     "description"
-    t.integer  "parent_id",   :default => 0, :null => false
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "itineraries", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.string   "img_url"
+    t.string   "address"
     t.text     "description"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "parent_id",   :default => 0,     :null => false
     t.boolean  "is_copy",     :default => false
     t.datetime "created_at",                     :null => false

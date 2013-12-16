@@ -7,6 +7,13 @@
 
 <br>
 
+<%= form_tag itineraries_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
+
 <button><%= link_to 'Post a new itinerary', new_itinerary_path %></button><br>
 
 
