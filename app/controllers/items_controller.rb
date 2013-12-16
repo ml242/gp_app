@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
       @item.itineraries << Itinerary.find(params["itinerary_id"])
       @item.save
       redirect_to   "/itineraries/#{params[:itinerary_id]}"
-      # redirect_to ('/itineraries/"#{params[itinerary_id]}"')
     elsif
       @item.save
       redirect_to items_path
