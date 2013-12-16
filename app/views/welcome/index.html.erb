@@ -10,8 +10,8 @@
         <div class="login-btn"><%= f.submit "Login" %></div>
 
         <div class="facebook-login">
-          <img src="http://www.elterre.com/images/connect/facebook.png" width="65%">
-          <%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %>
+          <a href="http://localhost:3000/users/auth/facebook"><img src="http://www.elterre.com/images/connect/facebook.png" width="65%"></a>
+          <%#= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %>
         </div>
       <% end %>
     </div>
