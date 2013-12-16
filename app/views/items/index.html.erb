@@ -8,9 +8,11 @@
 <br>
 
 <% @rand_items.each do |item| %>
+
   <h3><%= item.name %></h2><br>
+
   <%= item.description %><br>
-  <a href="/items/<%= item.id %>"><img src="<%= item.img_url %></a><br>
+  <a href="/items/<%= item.id %>"><img src="<%= item.img_url %>"></a><br>
 
 <% end %>
 
