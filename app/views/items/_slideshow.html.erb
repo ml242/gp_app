@@ -5,12 +5,12 @@
   <li>Slide two content</li>
   <li>Slide three content</li>
   <li>And so on...</li> -->
-<% @rand_items.each do |item| %>
+  <% @rand_items.each do |item| %>
   <li><%= item.name %> <%#= item.user.name %><br>
     <img src="<%= item.img_url %>">
-  <!-- <a href="/itineraries/<%#= itinerary.id %>"><img src="<%#= item.img_url %>" width="30%"></a><br> -->
-  <%#= itinerary.is_copy %></li>
-<% end %>
+    <!-- <a href="/itineraries/<%#= itinerary.id %>"><img src="<%#= item.img_url %>" width="30%"></a><br> -->
+    <%#= itinerary.is_copy %></li>
+  <% end %>
 
-</ul>
+  </ul>
 <% end %>

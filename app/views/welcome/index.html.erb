@@ -2,11 +2,11 @@
 
   <h2>Welcome to Goin Places</h2>
   <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
-  <div><%= f.text_field :email, :placeholder => 'Enter your email address', :size => 50 %>
+  <div><%= f.text_field :email, :placeholder => 'Enter your email address', :size => 50, :required => true %>
 
     <br />
     <div>
-      <%= f.password_field :password, :placeholder => 'Enter your password', :size => 50 %></div>
+      <%= f.password_field :password, :placeholder => 'Enter your password', :size => 50, :required => true %></div>
 
       <div>
        <%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %> <%= f.submit "Login" %></div>
