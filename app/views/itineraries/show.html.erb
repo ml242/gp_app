@@ -47,7 +47,16 @@
       <%= item.description %><br>
     </div>
     <img src="<%= item.img_url %>" width="25%"><br>
-    <% item.links[0].is_complete %>
+
+    <%= form_for item.links[0] do |f| %>
+      <%= f.label "did it?" %>
+      <%= f.check_box :is_complete %>
+      <%= f.submit 'toggle' %>
+    <% end %>
+
+      <%# if item.links[0].is_complete == false %>
+        <%#= "Mark completed?" %>
+      <%# end %>
     <% end %>
   </div>
 

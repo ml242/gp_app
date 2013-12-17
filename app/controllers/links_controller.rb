@@ -19,8 +19,10 @@ class LinksController < ApplicationController
     @links = Link.all
   end
 
-#   def update
-#   end
+  def update
+    @link = Link.find(params[:id])
+    @link.update_attributes!
+  end
 
 #   def destroy
 #   end
