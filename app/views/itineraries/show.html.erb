@@ -44,7 +44,11 @@
     <%= item.name %><br>
     <%= item.description %><br>
     <img src="<%= item.img_url %>" width="25%"><br>
-    <% item.links[0].is_complete %>
+      <% if item.links[0].is_complete == false %>
+        <%  %>
+      <% else %>
+        <%  %>
+      <% end %>
     <% end %>
   </div>
 
