@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131214181926) do
+ActiveRecord::Schema.define(:version => 20131217200754) do
 
   create_table "items", :force => true do |t|
     t.string   "name"
@@ -41,8 +41,9 @@ ActiveRecord::Schema.define(:version => 20131214181926) do
   create_table "links", :force => true do |t|
     t.integer  "item_id"
     t.integer  "itinerary_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.boolean  "is_complete",  :default => false
   end
 
   create_table "users", :force => true do |t|
