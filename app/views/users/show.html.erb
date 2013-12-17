@@ -35,7 +35,8 @@
   </div>
     </div>
     <div class="itin-show-img">
-      <img src="<%= itinerary.img_url %>" width='60%'>
+       <div class="itin-show-img">
+      <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="60%"></a><br>
     </div>
     <div class="itin-show-desc">
       <%= itinerary.description %><br>
