@@ -13,7 +13,8 @@
 
 
 
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
     <!-- AddThis Button END -->
 
 
@@ -26,7 +27,7 @@
       <!-- AddThis Button BEGIN -->
       <a
       class="addthis_button"
-      addthis:url="http://goinplaces.com"
+      addthis:url="http://goinplac.es"
       addthis:title="Going Places"
       addthis:description="Great Escape Artists Steal (itineraries)">
       <%= image_tag("share.png", class: "sharer-small") %>
@@ -34,7 +35,8 @@
   </div>
     </div>
     <div class="itin-show-img">
-      <img src="<%= itinerary.img_url %>" width='60%'>
+       <div class="itin-show-img">
+      <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="60%"></a><br>
     </div>
     <div class="itin-show-desc">
       <%= itinerary.description %><br>
@@ -43,11 +45,4 @@
     <br>
   </div>
 
-
-  <div class="copy-add-item">
-
-    <%#= link_to 'Add new item to current itinerary', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
-    <%#= link_to 'Search for stuff to add to an itinerary', "/items", :method => :get %>
-    <%# end %>
-  </div>
 </div>
