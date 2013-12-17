@@ -14,8 +14,7 @@ class ItemsController < ApplicationController
     if params["itinerary_id"]
       @item.itineraries << Itinerary.find(params["itinerary_id"])
       @item.save
-      redirect_to   "/itineraries/#{params[:itinerary_id]}"
-      # redirect_to ('/itineraries/"#{params[itinerary_id]}"')
+      redirect_to "/itineraries/#{params[:itinerary_id]}"
     elsif
       @item.save
       redirect_to items_path
@@ -31,6 +30,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+
     @item = Item.find(params[:id])
     @itineraries = Itinerary.all
     @link = Link.create
