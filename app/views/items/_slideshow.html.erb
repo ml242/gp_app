@@ -3,9 +3,9 @@
 
   <% @rand_items.each do |item| %>
 
-  <%= item.name %><br>
+  <li class="images"><%= item.name %><br>
 
-    <a href="/items/<%= item.id %>"> <img id="bx-center" src="<%= item.img_url %>" width="30%"></a><br>
+    <a href="/items/<%= item.id %>"> <img id="bx-center" src="<%= item.img_url %>" width="30%"></a><br></li>
 
   <% end %>
 
