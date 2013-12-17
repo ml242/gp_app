@@ -2,6 +2,7 @@
   <% if flash[:notice] %>
   <div id="notice"><%= flash[:notice] %></div>
   <% end %>
+     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
 
   <div class="itin-show-edit">
     <% if current_user.id == @itinerary.user_id %>
@@ -10,19 +11,22 @@
     <br>
   </div>
 
-  <div class="itin-show-title"><h1><%= @itinerary.title %></h1><br></div>
-
+  <div class="itin-show-title">
   <div class="add-this">
-    <!-- AddThis Button BEGIN -->
+
+    <%= @itinerary.title %><!-- AddThis Button BEGIN -->
     <a
     class="addthis_button"
     addthis:url="http://goinplac.es"
     addthis:title="Going Places"
     addthis:description="Great Escape Artists Steal (itineraries)">
     <%= image_tag("share.png", class: "sharer-small") %>
-    </a>
+    </a><br></div>
 
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
+
+
+
+
     <!-- AddThis Button END -->
   </div>
 
