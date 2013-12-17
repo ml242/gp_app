@@ -45,9 +45,9 @@
     <%= item.description %><br>
     <img src="<%= item.img_url %>" width="25%"><br>
       <% if item.links[0].is_complete == false %>
-        <%  %>
+        <%= "place not visited - yet" %>
       <% else %>
-        <%  %>
+        <% "place visited" %>
       <% end %>
     <% end %>
   </div>
