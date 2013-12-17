@@ -9,7 +9,19 @@
 
 <div><h1><%= @itinerary.title %></h1><br></div>
 
-<div class="fb-share-button" data-href="http://goplac.es" data-width="200px" data-type="button"></div> <br><br>
+<!-- AddThis Button BEGIN -->
+<a
+       class="addthis_button"
+       addthis:url="http://goinplaces.com"
+       addthis:title="Going Places"
+       addthis:description="Great Escape Artists Steal (itineraries)">
+      <%= image_tag("share.png", class: "sharer-small") %>
+</a>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
+<!-- AddThis Button END -->
+
+<br><br>
 
 <div>
   <img src="<%= @itinerary.img_url %>" width='60%'>
