@@ -8,10 +8,10 @@
           <%= f.text_field :email, :placeholder => 'Enter your email address', :style => "width : 60%", :required => true %><br />
           <%= f.password_field :password, :placeholder => 'Enter your password', :style => "width : 60%", :required => true %>
 
-        <div class="login-btn"><%= f.submit "Login" %></div>
+        <div id="important" class="login-btn"><%= f.submit "Login", :type => :image, :src => "assets/submit.png" %><% end %> <%= link_to image_tag("register.png"),welcome_register_path %> </div>
 
         </div>
-        <% end %>
+
       </div>
 
     </div>

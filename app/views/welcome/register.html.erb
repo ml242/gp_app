@@ -1,0 +1,34 @@
+    <%= image_tag("gp.png", class: "gp-title") %>
+    <div class="login-page-container">
+      <div class="login-form-box">
+
+
+        <div class="login-form">
+         <%= form_for(:user, :as => :user, :url => registration_path(:user)) do |f| %>
+
+         <div><%= f.label :name %><br />
+          <%= f.text_field :name, :autofocus => true %></div>
+
+          <div><%= f.label :email %><br />
+            <%= f.email_field :email, :autofocus => true %></div>
+
+            <div><%= f.label :password %><br />
+              <%= f.password_field :password %></div>
+
+              <div><%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation %></div>
+
+                <div class="login-btn"><%= f.submit "Sign up" %><% end %></div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div id="fb-button">
+          <a href="http://localhost:3000/users/auth/facebook"><img src="http://www.elterre.com/images/connect/facebook.png"></a>
+          <%#= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %></div>
+
+          <%#= render "users/shared/links" %>

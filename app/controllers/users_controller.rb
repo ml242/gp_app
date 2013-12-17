@@ -18,6 +18,10 @@ class UsersController < ApplicationController
 
   end
 
+  def register
+
+  end
+
   def index
     # @users = User.all
   end

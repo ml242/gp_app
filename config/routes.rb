@@ -1,4 +1,4 @@
-# == Route Map (Updated 2013-12-16 18:29)
+# == Route Map (Updated 2013-12-17 12:19)
 #
 #         new_user_session GET      /users/sign_in(.:format)                            devise/sessions#new
 #             user_session POST     /users/sign_in(.:format)                            devise/sessions#create
@@ -72,8 +72,13 @@ GoinPlacesTestApp::Application.routes.draw do
 
   root to: 'welcome#index'
   root to: 'users#sign_in'
+  root to: "welcome#register", :as => "new_user_registration"
+  # root to: 'users#create'
+
+  # get 'welcome#register', as 'users#register'
 
   get 'welcome/index'
+  get 'welcome/register'
   get 'itineraries/:id/copy/' => 'itineraries#copy'
   get 'itineraries/:id/add/' => 'itineraries#add'
 

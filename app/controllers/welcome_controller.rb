@@ -5,4 +5,8 @@ class WelcomeController < ApplicationController
     @disable_nav = true
   end
 
+  def register
+    @disable_nav = true
+  end
+
 end
