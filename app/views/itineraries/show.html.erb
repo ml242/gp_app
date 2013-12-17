@@ -44,10 +44,18 @@
     <%= item.name %><br>
     <%= item.description %><br>
     <img src="<%= item.img_url %>" width="25%"><br>
+
+    <%= form_for [item.links[0]], :remote => true do |f| %>
+      <%= f.label :is_complete %>
+     <%= f.check_box :is_complete %>
+    <% end %>
+
+
+
+
+
       <% if item.links[0].is_complete == false %>
-        <%= "place not visited - yet" %>
-      <% else %>
-        <% "place visited" %>
+        <%= "Mark completed?" %>
       <% end %>
     <% end %>
   </div>
