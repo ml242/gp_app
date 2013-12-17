@@ -7,7 +7,9 @@ class Itinerary < ActiveRecord::Base
   after_validation :geocode, :if => :address_changed?
 
   def copy
-    Itinerary.create(title: title, img_url: img_url, address: address, description: description, parent_id: id, latitude: latitude, longitude: longitude, is_copy: true)
+    @i = Itinerary.create(title: title, img_url: img_url, address: address, description: description, parent_id: id, latitude: latitude, longitude: longitude, is_copy: true)
+    @i.items = self.items
+    @i.save
   end
 
   def add_item(item_id)

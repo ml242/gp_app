@@ -22,6 +22,8 @@ group :assets do
   # gem 'coffee-script'
   # gem 'guard-livereload'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'bourbon'
+  gem 'neat'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

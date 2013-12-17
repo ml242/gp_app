@@ -12,11 +12,14 @@
 
   <section class="itinerary-item">
     <% @rand_itineraries.each do |itinerary| %>
-      <div class="itin">
-        <h2><%= itinerary.title %></h2><br>
-        <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>"></a><br>
-        <div class="itinerary-desc"><%= itinerary.description %></div><br>
+
+      <div class="itin-inside-box">
+        <div class="itin-img">
+          <h2><%= itinerary.title %></h2>
+          <a href="/itineraries/<%= itinerary.id %>"><img class="itin-img" src="<%= itinerary.img_url %>"></a></div>
+        <div class="itin-desc"><%= itinerary.description %></div>
       </div>
+
     <% end %>
   </section>
 
