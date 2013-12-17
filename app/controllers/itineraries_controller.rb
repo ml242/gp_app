@@ -49,6 +49,7 @@ class ItinerariesController < ApplicationController
     @new_itinerary = @itinerary.copy
     @new_itinerary.user = current_user
     @new_itinerary.save
+    flash[:notice] = 'We have copied your itinerary.'
     redirect_to @new_itinerary
   end
 
