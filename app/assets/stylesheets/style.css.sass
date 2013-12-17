@@ -1,3 +1,9 @@
+.clearfix, %clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
 .gp-title
   width: 50%
   margin-left: 25%
@@ -52,7 +58,8 @@ input
 ////////////////////////////
 
 .itin-container
-  width: 1440px
+  max-width: 1440px
+  min-width: 805px
 
 .itin-title
   height: 20%
@@ -66,21 +73,26 @@ input
 
 .itin-inside-box
   margin-left: 3%
+  margin-bottom: 35px
   h2
     font-size: 23px
-    margin-bottom: 5px
+    margin-bottom: 10px
   .itin-desc
-    width: 66%
+    width: 66%%
     display: inline-block
     font-size: 16px
+    margin-left: 10px
+
+.itin-content
+  @extend %clearfix
 
 .itin-img
   width: 32%
-  display: inline-block
+  float: left
   text-align: left
   margin-bottom: 10px
   img
-    width: 80%
+    width: 95%
 
 .bxslider
   text-align: center
