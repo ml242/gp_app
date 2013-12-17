@@ -10,14 +10,14 @@ class LinksController < ApplicationController
   def create
     @link = Link.create(params[:link])
     redirect_to("/itineraries/#{params[:link][:itinerary_id]}")
-
   end
 
 #   def edit
 #   end
 
-#   def show
-#   end
+  def show
+    @links = Link.all
+  end
 
 #   def update
 #   end

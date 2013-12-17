@@ -2,12 +2,15 @@
   <% if flash[:notice] %>
   <div id="notice"><%= flash[:notice] %></div>
   <% end %>
+
+
+
      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
 
   <div class="itin-show-edit">
     <% if current_user.id == @itinerary.user_id %>
     <%= link_to 'Edit Itinerary', edit_itinerary_path %> | <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %>
-    <% end %> | <%= link_to 'Itineraries', itineraries_path %>
+     | <% end %><%= link_to 'Itineraries', itineraries_path %>
     <br>
   </div>
 
@@ -22,9 +25,6 @@
     addthis:description="Great Escape Artists Steal (itineraries)">
     <%= image_tag("share.png", class: "sharer-small") %>
     </a><br></div>
-
-
-
 
 
     <!-- AddThis Button END -->
@@ -43,7 +43,8 @@
     <% @items.each do |item| %>
     <%= item.name %><br>
     <%= item.description %><br>
-    <img src="<%= item.img_url %>" width="25%">
+    <img src="<%= item.img_url %>" width="25%"><br>
+    <% item.links[0].is_complete %>
     <% end %>
   </div>
 
