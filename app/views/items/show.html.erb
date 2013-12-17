@@ -8,8 +8,8 @@
 Description: <%= @item.description %><br>
 
 
-<%= collection_select :itinerary_id, 0, Itinerary.all, :id, :title, :prompt => "Select itinerary" %>
+<%= form_for(:link) do |f| %>
 
-<button></button>
-
-
+<%= collection_select :itinerary_id, 0, Itinerary.where(:user_id => current_user.id), :id, :title, :prompt => "Select itinerary" %>
+<%= f.submit 'Add item to itinerary' %>
+<% end %>
