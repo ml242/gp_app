@@ -17,11 +17,11 @@
     <!-- AddThis Button END -->
 
 
+  <% @itineraries.each do |itinerary| %>
   <div class="itin-show-info">
     <!-- gets the items for each itinerary here -->
     <div class="itin-show-title">
     <div class="add-this">
-    <% @itineraries.each do |itinerary| %>
       <%= itinerary.title %>
       <!-- AddThis Button BEGIN -->
       <a
