@@ -7,17 +7,9 @@
 <img src="<%= @item.img_url %>" width="25%"><br>
 Description: <%= @item.description %><br>
 
-<!-- <button>Add <%= @item.name %> to:</button>
-<input type="select" name="add-to-itinerary" options_for_select=""> -->
 
-<%# itineraries_array = Itinerary.all.map { |itinerary| [itinerary.title, itinerary.id] %>
+<%= collection_select :itinerary_id, 0, Itinerary.all, :id, :title, :prompt => "Select itinerary" %>
 
+<button></button>
 
-<%#= form_for([@itinerary]) do |f| %>
-<%#= f.label "To which itinerary do you want to add?" %>
-
-<%#= f.select options_for_select(itineraries_array) %>
-<%#= f.submit %>
-
-<%#= options_form_collection_for_select(Itinerary.all, :id, :title) %>
 
