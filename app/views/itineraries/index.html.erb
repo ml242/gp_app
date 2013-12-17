@@ -4,9 +4,7 @@
   </div>
 
   <div class="itin-slideshow">
-    <br>
     <%= render 'slideshow' %>
-    <br>
   </div>
 
 
@@ -25,6 +23,7 @@
     <% end %>
   </section>
 
-
-  <button><%= link_to 'Post a new itinerary', new_itinerary_path %></button><br>
+  <div class="post-new">
+    <%= link_to 'Post a new itinerary', new_itinerary_path %>
+  </div>
 </div>
