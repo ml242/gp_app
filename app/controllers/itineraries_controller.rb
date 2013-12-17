@@ -68,7 +68,6 @@ class ItinerariesController < ApplicationController
     @item = Item.create
     @itinerary = Itinerary.find(params[:id])
     @itinerary.add_item(@item)
-    # redirect_to
   end
 
 
