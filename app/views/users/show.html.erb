@@ -23,6 +23,7 @@
       <!-- gets the items for each itinerary here -->
       <div class="itin-show-title">
         <div class="add-this">
+
           <%= itinerary.title %>
           <!-- AddThis Button BEGIN -->
           <a
@@ -35,14 +36,12 @@
       </div>
     </div>
     <div class="itin-show-img">
-     <div class="itin-show-img">
       <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="60%"></a><br>
     </div>
     <div class="itin-show-desc">
       <%= itinerary.description %><br>
     </div>
     <br>
-  </div>
     <% end %>
 
 </div>
