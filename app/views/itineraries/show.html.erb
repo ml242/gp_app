@@ -45,18 +45,15 @@
     <%= item.description %><br>
     <img src="<%= item.img_url %>" width="25%"><br>
 
-    <%= form_for [item.links[0]], :remote => true do |f| %>
-      <%= f.label :is_complete %>
-     <%= f.check_box :is_complete %>
+    <% form_for item.links[0] do |f| %>
+      <%= f.label "did it?" %>
+      <%= f.check_box :is_complete %>
+      <% f.submit 'toggle complete' %>
     <% end %>
 
-
-
-
-
-      <% if item.links[0].is_complete == false %>
-        <%= "Mark completed?" %>
-      <% end %>
+      <%# if item.links[0].is_complete == false %>
+        <%#= "Mark completed?" %>
+      <%# end %>
     <% end %>
   </div>
 
