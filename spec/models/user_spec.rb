@@ -1,19 +1,19 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe User do
+describe User do
 
-#   before(:each) do
-#     @user = Factory(:user)
-#   end
+  before(:each) do
+    @user = User.new(name: "matt1", password: password, email: "matt@matt.com")
+  end
 
-#   it "should create a new instance given a valid attribute" do
-#     User.create!(@user_attr)
-#   end
-
-  # it "should require an email address" do
-  #   no_email_user = User.new(@attr.merge(:email => ""))
-  #   no_email_user.should_not be_valid
+  # it "should create a new instance given a valid attribute" do
+  #   User.create!(@user_attr)
   # end
+
+  it "should require an email address" do
+    no_email_user = User.create(password: "password")
+    expect(no_email_user).to throw(error)
+  end
 
   # it "should accept valid email addresses" do
   #   addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
@@ -95,4 +95,4 @@
 
   # end
 
-# end
+end
