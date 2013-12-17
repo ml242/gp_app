@@ -1,26 +1,25 @@
-<div class="titlez">
-<h1 class="itineraries-index">Itineraries Index</h1>
+<div class="itin-container">
+  <div class="itin-title">
+    <h1 class="itineraries-index">Browse itineraries</h1>
+  </div>
+
+  <div class="itin-slideshow">
+    <br>
+    <%= render 'slideshow' %>
+    <br>
+  </div>
+
+
+  <section class="itinerary-item">
+    <% @rand_itineraries.each do |itinerary| %>
+      <div class="itin">
+        <h2><%= itinerary.title %></h2><br>
+        <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>"></a><br>
+        <div class="itinerary-desc"><%= itinerary.description %></div><br>
+      </div>
+    <% end %>
+  </section>
+
+
+  <button><%= link_to 'Post a new itinerary', new_itinerary_path %></button><br>
 </div>
-<br>
-
-<%= render 'slideshow' %>
-
-<br>
-
-
-<!-- We can take these out or add different sliders -->
-
-<div class="deetz-index">
-<% @rand_itineraries.each do |itinerary| %>
-
-  <h3><%= itinerary.title %></h2><br>
-
-  <%= itinerary.description %><br>
-  <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>"></a><br>
-<% end %>
-</div>
-
-
-<button><%= link_to 'Post a new itinerary', new_itinerary_path %></button><br>
-
-
