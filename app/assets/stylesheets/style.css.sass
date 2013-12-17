@@ -1,3 +1,9 @@
+.clearfix, %clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
 .gp-title
   width: 50%
   margin-left: 25%
@@ -59,7 +65,8 @@ input
 ////////////////////////////
 
 .itin-container
-  width: 1440px
+  max-width: 1440px
+  min-width: 805px
 
 .itin-title
   height: 20%
@@ -73,21 +80,97 @@ input
 
 .itin-inside-box
   margin-left: 3%
+  margin-bottom: 35px
   h2
     font-size: 23px
-    margin-bottom: 5px
+    margin-bottom: 10px
   .itin-desc
-    width: 66%
+    width: 66%%
     display: inline-block
     font-size: 16px
+    margin-left: 10px
+    margin-right: 5px
+
+.itin-content
+  @extend %clearfix
 
 .itin-img
   width: 32%
-  display: inline-block
+  float: left
   text-align: left
   margin-bottom: 10px
   img
-    width: 80%
+    width: 95%
+
+///////////////////////////
+// ITINERARIES SHOW PAGE //
+///////////////////////////
+
+.itin-show-container
+  max-width: 1440px
+  min-width: 500px
+
+.itin-show-edit
+  margin-bottom: 20px
+  margin-left: 3%
+  font-weight: bold
+  font-size: 20px
+  font-family: Gotham
+  a
+    color: black
+  a:link
+    text-decoration: none
+  a:visited
+    text-decoration: none
+  a:hover
+    text-decoration: underline
+  a:active
+    text-decoration: underline
+
+.itin-show-title
+  font-family: Gotham
+  height: 20%
+  font-size: 45px
+  margin-left: 3%
+  font-weight: strong
+
+.add-this
+  margin-left: 3%
+  margin-bottom: 15px
+
+.itin-show-img
+  margin-left: 3%
+  margin-bottom: 25px
+
+.itin-show-desc
+  font-family: Helvetica
+  line-height: 145%
+  margin-left: 3%
+  margin-bottom: 25px
+  margin-right: 3%
+
+.copy-add-item
+  margin-left: 3%
+  font-weight: bold
+  font-size: 20px
+  font-family: Gotham
+  margin-bottom: 50px
+  a
+    color: black
+  a:link
+    text-decoration: none
+  a:visited
+    text-decoration: none
+  a:hover
+    text-decoration: underline
+  a:active
+    text-decoration: underline
+
+
+
+////////////
+// SLIDER //
+////////////
 
 .bxslider
   text-align: center
