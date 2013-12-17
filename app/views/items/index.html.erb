@@ -1,19 +1,33 @@
-<div class="titlez">
-<h1 id="items-index-title">Items Index Page</h1>
+<div class="item-container">
+
+  <div class="itin-title">
+    <h1>Browse items</h1>
+  </div>
+
+  <div class="itin-slideshow">
+    <%= render 'slideshow' %>
+  </div>
+
+  <section class="itinerary-item">
+
+    <% @rand_items.each do |item| %>
+
+      <div class="itin-inside-box">
+        <h2><%= item.name %></h2><br>
+
+        <div class="itin-content">
+          <div class="itin-img">
+            <a href="/items/<%= item.id %>"><img src="<%= item.img_url %>"></a>
+          </div>
+          <div class="item-desc">
+            <%= item.description %>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  </section>
+  <div class="post-new">
+    <%= link_to 'Post a new item', new_item_path %>
+  </div>
 </div>
-<br>
-
-<%= render 'slideshow' %>
-
-<br>
-
-<% @rand_items.each do |item| %>
-
-  <h3><%= item.name %></h2><br>
-
-  <%= item.description %><br>
-  <a href="/items/<%= item.id %>"><img src="<%= item.img_url %>"></a><br>
-
-<% end %>
-
-<%= link_to 'Post a new item', new_item_path %>

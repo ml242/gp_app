@@ -4,11 +4,12 @@
   </div>
 
   <div class="itin-slideshow">
-    <br>
     <%= render 'slideshow' %>
-    <br>
   </div>
 
+  <div class="post-new">
+    <button><%= link_to 'NEW ITINERARY', new_itinerary_path %></button>
+  </div>
 
   <section class="itinerary-item">
     <% @rand_itineraries.each do |itinerary| %>
@@ -25,6 +26,4 @@
     <% end %>
   </section>
 
-
-  <button><%= link_to 'Post a new itinerary', new_itinerary_path %></button><br>
 </div>
