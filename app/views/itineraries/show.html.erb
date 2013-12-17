@@ -4,8 +4,7 @@
   <% end %>
 
 
-
-     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
 
   <div class="itin-show-edit">
     <% if current_user.id == @itinerary.user_id %>
@@ -41,8 +40,12 @@
   <div class="itin-show-info">
     <!-- gets the items for each itinerary here -->
     <% @items.each do |item| %>
-    <%= item.name %><br>
-    <%= item.description %><br>
+    <div class="itin-item-name">
+      <%= item.name %><br>
+    </div>
+    <div class="itin-item-desc">
+      <%= item.description %><br>
+    </div>
     <img src="<%= item.img_url %>" width="25%"><br>
     <% item.links[0].is_complete %>
     <% end %>
@@ -50,7 +53,9 @@
 
   <div class="copy-add-item">
     <% if current_user.id != @itinerary.user_id %>
-    <%= link_to 'Copy itinerary', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
+    <div class="copy-itinerary">
+      <button><%= link_to 'Copy itinerary', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
+      </button>
     <% end %>
 
     <% if current_user.id == @itinerary.user_id %>
