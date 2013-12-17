@@ -18,31 +18,31 @@
     <!-- AddThis Button END -->
 
 
-  <% @itineraries.each do |itinerary| %>
-  <div class="itin-show-info">
-    <!-- gets the items for each itinerary here -->
-    <div class="itin-show-title">
-    <div class="add-this">
-      <%= itinerary.title %>
-      <!-- AddThis Button BEGIN -->
-      <a
-      class="addthis_button"
-      addthis:url="http://goinplac.es"
-      addthis:title="Going Places"
-      addthis:description="Great Escape Artists Steal (itineraries)">
-      <%= image_tag("share.png", class: "sharer-small") %>
-    </a>
-  </div>
+    <% @itineraries.each do |itinerary| %>
+    <div class="itin-show-info">
+      <!-- gets the items for each itinerary here -->
+      <div class="itin-show-title">
+        <div class="add-this">
+          <%= itinerary.title %>
+          <!-- AddThis Button BEGIN -->
+          <a
+          class="addthis_button"
+          addthis:url="http://goinplac.es"
+          addthis:title="Going Places"
+          addthis:description="Great Escape Artists Steal (itineraries)">
+          <%= image_tag("share.png", class: "sharer-small") %>
+        </a>
+      </div>
     </div>
     <div class="itin-show-img">
-       <div class="itin-show-img">
+     <div class="itin-show-img">
       <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="60%"></a><br>
     </div>
     <div class="itin-show-desc">
       <%= itinerary.description %><br>
     </div>
-    <% end %>
     <br>
   </div>
+    <% end %>
 
 </div>
