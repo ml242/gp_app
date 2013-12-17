@@ -4,9 +4,8 @@
 
 <% if current_user.id == @itinerary.user_id %>
 <%= link_to 'Edit Itinerary', edit_itinerary_path %> | <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %>
-<% end %>
-
-<%= link_to 'Itineraries', itineraries_path %>
+<% end %> | <%= link_to 'Itineraries', itineraries_path %>
+<br>
 
 <div><h1><%= @itinerary.title %></h1><br></div>
 
