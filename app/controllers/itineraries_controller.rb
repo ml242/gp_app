@@ -2,13 +2,15 @@ class ItinerariesController < ApplicationController
 
 
   def index
-
     if params[:search].present?
       @itineraries = Itinerary.near(params[:search], 50, :order => :distance)
+      @users = User.all
     else
       @itineraries = Itinerary.all
+      @users = User.all
     end
-      @rand_itineraries = @itineraries.shuffle
+    @rand_itineraries = @itineraries.shuffle[1..10]
+    @users = User.all
   end
 
   def new
@@ -18,6 +20,7 @@ class ItinerariesController < ApplicationController
   def create
     @itinerary = Itinerary.new(params[:itinerary])
     @itinerary.user = current_user
+    @itinerary.user_id = current_user.id
     if @itinerary.save
       redirect_to @itinerary
     else
@@ -47,6 +50,7 @@ class ItinerariesController < ApplicationController
   def copy
     @itinerary = Itinerary.find(params[:id])
     @new_itinerary = @itinerary.copy
+    @new_itinerary.items = @itinerary.items
     @new_itinerary.user = current_user
     @new_itinerary.save
     flash.now[:notice] = 'We have copied your itinerary.'

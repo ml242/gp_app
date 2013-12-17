@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    @rand_items = @items.shuffle
+    @rand_items = @items.shuffle[1..10]
   end
 
   def new
@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @itineraries = Itinerary.where(user_id: current_user.id)
-
     @link = Link.new
   end
 

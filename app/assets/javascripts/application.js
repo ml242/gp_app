@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_bxslider
 //= require bxslider
 
 //= require json2

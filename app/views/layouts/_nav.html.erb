@@ -2,7 +2,7 @@
 <div class="nav-bar-main">
   <%= image_tag("gp-white.png", class: "gp-title-nav") %>
 <div class="nav-bar-right">
-  Hello, <%= current_user.name %> | <a href="users/<%= current_user.id %>"> My Dashboard </a> |
+  Hello, <%= current_user.name %> | <a href="/users/<%= current_user.id %>"> My Dashboard </a> |
 <%= link_to('Travel Itineraries', itineraries_path, :method => :get) %> | <%= link_to 'Places to see', items_path %> |
 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
 </div>
