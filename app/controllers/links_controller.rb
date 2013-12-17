@@ -21,7 +21,14 @@ class LinksController < ApplicationController
 
   def update
     @link = Link.find(params[:id])
-    @link.update_attributes!
+    if params["link"]["is_complete"] == 1
+      @link.is_complete = true
+      @link.update
+    else
+      @link.is_complete = false
+      @link.update
+    end
+    redirect_back
   end
 
 #   def destroy
