@@ -3,7 +3,6 @@
   <div id="notice"><%= flash[:notice] %></div>
   <% end %>
 
-  <%# binding.pry %>
 
   <div class="itin-show-edit">
     <%= link_to 'Edit Itinerary', edit_itinerary_path %> | <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %>
@@ -11,37 +10,32 @@
     <br>
   </div>
 
-    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
-    <!-- AddThis Button END -->
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
+  <!-- AddThis Button END -->
 
 
-    <% @itineraries.each do |itinerary| %>
-    <div class="itin-show-info">
-      <!-- gets the items for each itinerary here -->
-      <div class="itin-show-title">
-        <div class="add-this">
+  <% @itineraries.each do |itinerary| %>
+  <div class="itin-show-info">
+    <!-- gets the items for each itinerary here -->
+    <div class="itin-show-title">
+      <div class="add-this">
 
-          <%= itinerary.title %>
-          <!-- AddThis Button BEGIN -->
-          <a
-          class="addthis_button"
-          addthis:url="http://goinplac.es"
-          addthis:title="Going Places"
-          addthis:description="Great Escape Artists Steal (itineraries)">
-          <%= image_tag("share.png", class: "sharer-small") %>
-        </a>
+        <%= itinerary.title %>
+        <!-- AddThis Button BEGIN -->
+        <a
+        class="addthis_button"
+        addthis:url="http://goinplac.es"
+        addthis:title="Going Places"
+        addthis:description="Great Escape Artists Steal (itineraries)">
+        <%= image_tag("share.png", class: "sharer-small") %></a>
       </div>
     </div>
-    <div class="itin-show-img">
-      <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="60%"></a><br>
-    </div>
-    <div class="itin-show-desc">
-      <%= itinerary.description %><br>
-    </div>
+    <div class="itin-show-img"><a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="60%"></a><br></div>
+    <div class="itin-show-desc"><%= itinerary.description %><br></div>
     <br>
+  </div>
     <% end %>
 
-</div>
 
-<%= render 'edit_details' %>
+  <%= render 'edit_details' %>
