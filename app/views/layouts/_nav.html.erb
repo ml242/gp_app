@@ -1,20 +1,22 @@
-<% if user_signed_in? %>
+<header class="container">
+  <% if user_signed_in? %>
 
-  <div class="nav-bar-main">
-    <div class="gp-logo">
-      <a href="/itineraries">goin' places</a>
+    <div class="nav-bar-main">
+      <div class="gp-logo">
+        <a href="/itineraries">goin' places</a>
+      </div>
+
+      <div class="nav-bar-right">
+        <div class="hello-name">
+          Hello, <%= current_user.name %> | <a href="/users/<%= current_user.id %>"> My Dashboard </a>
+        </div>
+        <div class="nav-links">
+          <%= link_to('Travel Itineraries', itineraries_path, :method => :get) %> | <%= link_to 'Places to see', items_path %> |
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        </div>
+      </div>
+
     </div>
 
-    <div class="nav-bar-right">
-      <div class="hello-name">
-        Hello, <%= current_user.name %> | <a href="/users/<%= current_user.id %>"> My Dashboard </a>
-      </div>
-      <div class="nav-links">
-        <%= link_to('Travel Itineraries', itineraries_path, :method => :get) %> | <%= link_to 'Places to see', items_path %> |
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      </div>
-    </div>
-
-  </div>
-
-<% end %>
+  <% end %>
+</header>
