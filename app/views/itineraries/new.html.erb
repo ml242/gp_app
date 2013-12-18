@@ -1,20 +1,27 @@
-<h1>Create new itinerary</h1>
+<div class="new-itinerary-page">
+  <h1>Create a new itinerary:</h1>
 
-  <%= form_for(@itinerary) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
+    <div class="itin-form">
+    <%= form_for(@itinerary) do |f| %>
 
-  <%= f.label :Location %>
-  <%= f.text_field :address %>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
 
+    <%= f.label :location %>
+    <%= f.text_field :address %><br>
 
-  <%= f.label :img_url %>
-  <%= f.text_field :img_url %><br>
+    <%= f.label :image %>
+    <%= f.text_field :img_url %><br>
 
-  <%= f.label :description %>
-  <%= f.text_area :description, size: "60x12" %><br>
+    <%= f.label :description %>
+    <%= f.text_area :description, size: "60x5" %><br>
 
-  <%= f.submit "Create itinerary" %>
-  <%= link_to "Cancel", itineraries_path %>
+    <div class="create-itin-btn">
+      <%= f.submit "CREATE" %>
 
-<% end %>
+      <button>
+        <%= link_to "CANCEL", itineraries_path %>
+      </button>
+    </div>
+  <% end %>
+</div>
