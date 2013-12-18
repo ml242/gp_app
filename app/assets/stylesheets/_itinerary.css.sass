@@ -1,0 +1,59 @@
+.itin-container
+  @include outer-container
+
+.itin-title
+  @include span-columns(4)
+  font-family: Helvetica
+  min-width: 350px
+  height: 20%
+  font-size: 35px
+  margin-left: 3%
+  margin-bottom: 20px
+  display: block
+  color: #00253B
+  @include fill-parent
+
+////////////
+// SLIDER //
+////////////
+
+.itin-slideshow
+  @include span-columns(12)
+  margin: 0 auto
+  padding: 20px
+
+.bxslider
+  text-align: center
+  li
+    display: inline-block
+    text-align: center
+
+.bx-wrapper
+  img
+    display: inline-block
+    text-align: center
+  text-align: center
+  display: inline-block
+
+#bx-center
+  text-align: center
+  display: inline-block
+
+//////////////////
+// BELOW SLIDER //
+//////////////////
+
+.itin-inside-box
+  @include span-columns(3)
+  @include omega(4n)
+  h2
+    font-family: Gotham
+    font-size: 25px
+
+.itin-content
+  margin-top: 18px
+  a
+    display: block
+  img
+    width: 100%
+    height: auto
