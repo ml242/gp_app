@@ -21,14 +21,14 @@ class LinksController < ApplicationController
 
   def update
     @link = Link.find(params[:id])
-    if params["link"]["is_complete"] == 1
-      @link.is_complete = true
-      @link.update
-    else
-      @link.is_complete = false
-      @link.update
-    end
-    redirect_back
+    @link.update_attributes(params[:link])
+    # I invented some stupid shit and spent a few hours wondering why it didn't work
+    # if params["link"]["is_complete"] == 1
+      # @link.is_complete = true
+      # @link.update_attributes
+    # end
+    # binding.pry
+    redirect_to("/itineraries/#{@link.itinerary_id}")
   end
 
 #   def destroy

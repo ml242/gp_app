@@ -45,15 +45,15 @@
     <%= item.description %><br>
     <img src="<%= item.img_url %>" width="25%"><br>
 
-    <%= form_for item.links[0] do |f| %>
-      <%= f.label "did it?" %>
-      <%= f.check_box :is_complete %>
-      <%= f.submit %>
+    <% if item.links[0].is_complete == false %>
+      <%= form_for item.links[0] do |f| %>
+        <%= f.label "mark this complete?" %>
+        <%= f.check_box :is_complete %>
+        <%= f.submit %>
+      <% end %>
+    <% else %>
+      <%= "Doneso" %>
     <% end %>
-
-      <%# if item.links[0].is_complete == false %>
-        <%#= "Mark completed?" %>
-      <%# end %>
     <% end %>
   </div>
 

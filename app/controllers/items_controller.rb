@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
     if params["itinerary_id"] != ""
       @item.itineraries << Itinerary.find(params["itinerary_id"])
       @item.save
-      redirect_to "/itineraries/#{params[:itinerary_id]}", notice: "You have added an item to your itinerary."
+      redirect_to "/itineraries/#{params[:itinerary_id]}"
     else
       @item.save
       redirect_to items_path
