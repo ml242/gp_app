@@ -73,14 +73,14 @@ GoinPlacesTestApp::Application.routes.draw do
 
 
   root to: 'welcome#index'
-  root to: 'users#sign_in'
-  root to: "welcome#register", :as => "new_user_registration"
+  # root to: 'users#sign_in'
+  get "welcome/register", :as => "welcome_register"
   # root to: 'users#create'
 
   # get 'welcome#register', as 'users#register'
 
-  get 'welcome/index'
-  get 'welcome/register'
+  # get 'welcome/index' =>
+  # get 'welcome/register'
   get 'itineraries/:id/copy/' => 'itineraries#copy'
   get 'itineraries/:id/add/' => 'itineraries#add'
 

@@ -6,7 +6,7 @@ describe "the signin process", :type => :feature do
   #   User.make(:email => 'user@example.com', :password => 'caplin')
   # end
 
-  it "allows me to create an account" do
+  xit "allows me to create an account" do
     visit '/welcome/register'
     within(".login-form") do
       fill_in 'user_name', :with => 'matt'
@@ -21,8 +21,8 @@ describe "the signin process", :type => :feature do
 
 
 
-  it "signs me in" do
-    visit '/welcome/index'
+  xit "signs me in" do
+    visit '/'
     within(".login-form") do
       fill_in 'user_email', :with => 'matt@matt.com'
       fill_in 'user_password', :with => 'password'
@@ -32,10 +32,8 @@ describe "the signin process", :type => :feature do
   end
 
   it "signs in with facebook" do
-    visit '/welcome/index'
-    within("#fb-button") do
-      click_link
-    end
+    visit '/'
+    find("a[href='users/auth/facebook']").click
     expect(response).to be 'Success'
   end
 
