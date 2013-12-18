@@ -12,9 +12,9 @@
   <%= f.text_area :description, :class => "new-item-field", size: "60x12" %><br>
 
   <%= hidden_field_tag :itinerary_id, params["itinerary_id"] %>
-
-  <%= f.submit "Create item", :class => "red-red-btn" %>
-  <%= link_to "Cancel", items_path %>
+  <br><br>
+  <%= f.submit "Create item", :class => "red-red-btn" %> |
+  <%= button_to "Cancel", items_path, :class => "red-red-btn"  %>
 
   <% end %>
 
