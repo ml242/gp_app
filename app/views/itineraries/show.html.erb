@@ -16,28 +16,36 @@
 
   <div class="itin-show-title">
 
-  <div class="add-this">
+
     <%= @itinerary.title %>
     created by <%= @itinerary.user.name %><br>
 
-    <!-- AddThis Button BEGIN -->
-    <a
-    class="addthis_button"
-    addthis:url="http://goinplac.es"
-    addthis:title="Going Places"
-    addthis:description="Great Escape Artists Steal (itineraries)">
-    <%= image_tag("share.png", class: "sharer-small") %>
-    </a><br></div>
-    <!-- AddThis Button END -->
+
+
   </div>
 <%   %>
   <div class="itin-show-container">
   <div class="itin-show-img"> <!-- ITIN IMAGE -->
     <img src="<%= @itinerary.img_url %>" width='60%'>
   </div>
-  <div class="itin-show-desc"> <!-- ITIN Description -->
-    Itinerary created on: <%= @itinerary.created_at %><br><br>
+  <div class="itin-show-desc">
+    <!-- ITIN Description -->
+    <div class="add-this">
+    Itinerary created on: <%= @itinerary.created_at %>
+    <!-- AddThis Button BEGIN -->
+    <a
+    class="addthis_button"
+    addthis:url="http://goinplac.es"
+    addthis:title="Going Places"
+    addthis:description="Great Escape Artists Steal (itineraries)">
+
+
+    <%= image_tag("share.png", class: "sharer-small") %>
+    </a><br>
+  <!-- AddThis Button END --><br>
+
     <%= @itinerary.description %><br>
+  </div>
   </div>
   </div>
 
