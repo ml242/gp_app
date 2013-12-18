@@ -1,14 +1,15 @@
-<h1>Create new item</h1>
+<div class="new-item-container">
+<h1>Create new item here dog</h1>
 
   <%= form_for(@item) do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %><br>
+  <%= f.text_field :name, :class => "new-item-field" %><br>
 
   <%= f.label :img_url %>
-  <%= f.text_field :img_url %><br>
+  <%= f.text_field :img_url, :class => "new-item-field" %><br>
 
   <%= f.label :description %>
-  <%= f.text_area :description, size: "60x12" %><br>
+  <%= f.text_area :description, :class => "new-item-field", size: "60x12" %><br>
 
   <%= hidden_field_tag :itinerary_id, params["itinerary_id"] %>
 
@@ -16,3 +17,5 @@
   <%= link_to "Cancel", items_path %>
 
   <% end %>
+
+</div>
