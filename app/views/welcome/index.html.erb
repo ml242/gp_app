@@ -1,25 +1,28 @@
-<div class="empty-div">
-<%= image_tag("gp.png", class: "gp-title") %>
-  <div class="login-page-container">
-    <div class="login-form-box">
+<div class="welcome-container">
+
+  <div class="login-page-wrapper">
+    <%= image_tag("gp.png", class: "gp-title") %>
+
+    <div class="login-page-container">
+      <div class="login-form-box">
 
 
-      <div class="login-form">
-        <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
-        <%= f.text_field :email, :placeholder => 'Enter your email address', :style => "width : 60%", :required => true %><br />
-        <%= f.password_field :password, :placeholder => 'Enter your password', :style => "width : 60%", :required => true %>
+        <div class="login-form">
+          <%= form_for(:user, :as => :user, :url => session_path(:user)) do |f| %>
+          <%= f.text_field :email, :placeholder => 'Enter your email address', :style => "width : 60%", :required => true %><br />
+          <%= f.password_field :password, :placeholder => 'Enter your password', :style => "width : 60%", :required => true %>
 
           <div id="important" class="login-btn"><%= f.submit "Login", :type => :image, :src => "assets/submit-black.png" %><% end %> <%= link_to image_tag("register-black.png"),welcome_register_path %> </div>
 
+        </div>
       </div>
-
     </div>
 
   </div>
 
 
   <div id="fb-button">
-  <a href="users/auth/facebook"><img src="http://www.elterre.com/images/connect/facebook.png"></a>
+    <a href="users/auth/facebook"><img src="http://www.elterre.com/images/connect/facebook.png"></a>
   <%#= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %></div>
 
   <%#= render "users/shared/links" %>
