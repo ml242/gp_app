@@ -16,4 +16,12 @@ class Itinerary < ActiveRecord::Base
     self.save
   end
 
+  def geocode(itinerary)
+    a = Geocoder.search(itinerary.title)
+    geocode = a[0]
+    itinerary.latitude = geocode.latitude
+    itinerary.longitude = geocode.longitude
+    itinerary.save
+  end
+
 end
