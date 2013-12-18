@@ -22,6 +22,7 @@ class ItinerariesController < ApplicationController
     @itinerary.user = current_user
     @itinerary.user_id = current_user.id
     if @itinerary.save
+      # Geocoder.search(@itinerary.title)
       redirect_to @itinerary
     else
       render :new
