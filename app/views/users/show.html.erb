@@ -7,14 +7,19 @@
   <div class="itin-show-edit">
     <button>
       <%= link_to 'Edit Itinerary', edit_itinerary_path %></button>
-    <button>
-      <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %>
-    </button>
-    <button>
-      <%= link_to 'Itineraries', itineraries_path %>
-    </button>
-    <br>
-  </div>
+      <button>
+        <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %>
+      </button>
+      <button>
+        <%= link_to 'Itineraries', itineraries_path %>
+      </button>
+      <button href="#collapse1" class="nav-toggle">Update your user settings</button>
+      <div id="collapse1" style="display:none">
+        <%= render 'edit_details' %>
+      </div>
+
+      <br>
+    </div>
 
   <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
@@ -44,4 +49,9 @@
     <% end %>
 
 
-  <%= render 'edit_details' %>
+
+
+
+
+
+

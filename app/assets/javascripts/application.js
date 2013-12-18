@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery_bxslider
 //= require bxslider
+//= require going.js
 
 //= require json2
 //= require handlebars
