@@ -28,13 +28,21 @@ $white: #ffffff
 .one-col
   @include span-columns(1)
 
+.two-col
+  @include span-columns(2)
+
+.four-col
+  @include span-columns(4)
+
 ///////////////
 // NAV BAR   //
 ///////////////
 
 header
+  min-width: 860px
   width: 100%
   background-color: #00253B
+
 
   .gp-logo
     @include span-columns(3)
@@ -43,6 +51,8 @@ header
     font-size: 45px
     margin-top: 9px
     margin-left: 3%
+    float: left
+    min-width: 300px
     a:link
       color: $white
       text-decoration: none
@@ -57,4 +67,26 @@ header
       text-decoration: none
 
   .nav-bar-right
-    @include span-columns(8)
+    @include span-columns(4)
+    @extend Helvetica
+    margin-right: 2%
+    margin-top: 20px
+    font-size: 18px
+    color: rgba(235, 235, 240, 1)
+    line-height: 130%
+    float: right
+    min-width: 435px
+
+    a
+      font-size: 18px
+      color: $white
+    a:link
+      color: $white
+      text-decoration: none
+    a:visited
+      text-decoration: none
+    a:hover
+      text-decoration: underline
+    a:active
+      text-decoration: underline
+
