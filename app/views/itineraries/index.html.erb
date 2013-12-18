@@ -21,9 +21,10 @@
 
       <div class="itin-inside-box">
         <h2><%= itinerary.title %></h2>
+
         <div class="itin-content">
           <a href="/itineraries/<%= itinerary.id %>"><img class="itin-img" src="<%= itinerary.img_url %>"></a>
-        <div class="itin-desc"><%= itinerary.description %></div>
+          <%= itinerary.description %>
         </div>
       </div>
 
