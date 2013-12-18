@@ -1,16 +1,12 @@
 ---
-Deutsche Normalschrift Muster und Anleitung.pdf: Deutsche Normalschrift Muster und
-  Anleitung-fbc90f32911d6db56a28e3ba683c3c73.pdf
-Deutsche Normalschrift Muster und Anleitung/index.pdf: Deutsche Normalschrift Muster
-  und Anleitung-fbc90f32911d6db56a28e3ba683c3c73.pdf
-Deutsche Normalschrift a.ttf: Deutsche Normalschrift a-27efa89b735c0a9a2c7027ddaefada7d.ttf
-Deutsche Normalschrift a/index.ttf: Deutsche Normalschrift a-27efa89b735c0a9a2c7027ddaefada7d.ttf
-Deutsche Normalschrift b.ttf: Deutsche Normalschrift b-9a52c250ac2bc389d614a649815b3ce8.ttf
-Deutsche Normalschrift b/index.ttf: Deutsche Normalschrift b-9a52c250ac2bc389d614a649815b3ce8.ttf
-OFL-FAQ.txt: OFL-FAQ-a2113bd1ef877d73027c8323e6e9f231.txt
-OFL-FAQ/index.txt: OFL-FAQ-a2113bd1ef877d73027c8323e6e9f231.txt
-Open Font License.txt: Open Font License-2da155e7242d8ad0f3a54b2ee3197a98.txt
-Open Font License/index.txt: Open Font License-2da155e7242d8ad0f3a54b2ee3197a98.txt
+deutsche_normalschrift_a.eot: deutsche_normalschrift_a-0e683c722c3159d4122c31d15efaaf38.eot
+deutsche_normalschrift_a/index.eot: deutsche_normalschrift_a-0e683c722c3159d4122c31d15efaaf38.eot
+deutsche_normalschrift_a.svg: deutsche_normalschrift_a-2bccf597918d6bec430c778e98f5a840.svg
+deutsche_normalschrift_a/index.svg: deutsche_normalschrift_a-2bccf597918d6bec430c778e98f5a840.svg
+deutsche_normalschrift_a.ttf: deutsche_normalschrift_a-204e9b72cc0d59e37ac82443713b5def.ttf
+deutsche_normalschrift_a/index.ttf: deutsche_normalschrift_a-204e9b72cc0d59e37ac82443713b5def.ttf
+deutsche_normalschrift_a.woff: deutsche_normalschrift_a-6c5a66319b75ae8d8334197a59e4c016.woff
+deutsche_normalschrift_a/index.woff: deutsche_normalschrift_a-6c5a66319b75ae8d8334197a59e4c016.woff
 facebook-btn.png: facebook-btn-db41256231012195add1bb7089f3a753.png
 facebook-btn/index.png: facebook-btn-db41256231012195add1bb7089f3a753.png
 gp-white.png: gp-white-e7f73c16b1c73864aee3dd83fa052322.png
@@ -31,8 +27,8 @@ submit2.png: submit2-be523d2be7de90342e4d01d94d836b02.png
 submit2/index.png: submit2-be523d2be7de90342e4d01d94d836b02.png
 application.js: application-41d92015c6da6c655464f5e30ae7f661.js
 application/index.js: application-41d92015c6da6c655464f5e30ae7f661.js
-application.css: application-524f42202bb33b8bdd9a6516c928990e.css
-application/index.css: application-524f42202bb33b8bdd9a6516c928990e.css
+application.css: application-095c7f8aacb9f8b04f9f5a38a3c656ee.css
+application/index.css: application-095c7f8aacb9f8b04f9f5a38a3c656ee.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 bx_loader.gif: bx_loader-37b139bcec1bd2f0c2bfa72308d0acb3.gif

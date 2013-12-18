@@ -21,13 +21,10 @@ class LinksController < ApplicationController
 
   def update
     @link = Link.find(params[:id])
-    binding.pry
     if @link.is_complete == false
-      binding.pry
       @link.is_complete = true
       @link.update_attributes(params[:link])
     else
-      binding.pry
       @link.is_complete = false
       @link.update_attributes(params[:link])
     end
