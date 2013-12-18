@@ -1,103 +1,35 @@
 @font-face
-font-family: 'deutsche_normalschriftregular'
-src: url('deutsche_normalschrift_a.eot')
-src: url('deutsche_normalschrift_a.eot?#iefix') format('embedded-opentype'), url(font-path('deutsche_normalschrift_a.woff')) format('woff'), url(font-path('deutsche_normalschrift_a.ttf')) format('truetype'), url(font-path('deutsche_normalschrift_a.svg#deutsche_normalschriftregular')) format('svg')
-font-weight: normal
-font-style: normal
+  font-family: 'deutsche_normalschriftregular'
+  src: url('deutsche_normalschrift_a.eot')
+  src: url('deutsche_normalschrift_a.eot?#iefix') format('embedded-opentype'), url(font-path('deutsche_normalschrift_a.woff')) format('woff'), url(font-path('deutsche_normalschrift_a.ttf')) format('truetype'), url(font-path('deutsche_normalschrift_a.svg#deutsche_normalschriftregular')) format('svg')
+  font-weight: normal
+  font-style: normal
 
-$white: #ffffff
+$white: #ffffff  
 
 %scripty-font
-font-family: 'deutsche_normalschriftregular'
+  font-family: 'deutsche_normalschriftregular'
 
 .clearfix, %clearfix
-&:after
-content: ""
-display: table
-clear: both
+  &:after
+    content: ""
+    display: table
+    clear: both
 
 ///////////////
 // ALL PAGES //
 ///////////////
 
 .container
-@include outer-container
-max-width: 100%
-height: 75px
+  @include outer-container
+  max-width: 100%
+  height: 75px
 
 .one-col
-@include span-columns(1)
+  @include span-columns(1)
 
 .two-col
-@include span-columns(2)
+  @include span-columns(2)
 
 .four-col
-@include span-columns(4)
-
-///////////////
-// NAV BAR   //
-///////////////
-
-header
-min-width: 860px
-width: 100%
-background-color: #00253B
-
-
-<<<<<<< HEAD
-.gp-title-nav
-max-height: 6%
-min-width: 2%
-margin-left: 3%
-margin-top: 20px
-
-.nav-bar-right a
-color: rgba(235, 235, 240, 1)
-
-
-.gp-logo
-@include span-columns(3)
-@extend %scripty-font
-color: $white
-font-size: 45px
-margin-top: 9px
-margin-left: 3%
-float: left
-min-width: 300px
-a:link
-color: $white
-text-decoration: none
-a:visited
-text-decoration: none
-color: $white
-a:hover
-color: $white
-text-decoration: none
-a:active
-color: $white
-text-decoration: none
-
-.nav-bar-right
-@include span-columns(4)
-@extend Helvetica
-margin-right: 2%
-margin-top: 20px
-font-size: 18px
-color: rgba(235, 235, 240, 1)
-line-height: 130%
-float: right
-min-width: 435px
-
-a
-font-size: 18px
-color: $white
-a:link
-color: $white
-text-decoration: none
-a:visited
-text-decoration: none
-a:hover
-text-decoration: underline
-a:active
-text-decoration: underline
-
+  @include span-columns(4)
