@@ -14,10 +14,16 @@
     <br>
   </div>
 
-  <div class="itin-show-title">
-  <div class="add-this">
 
-    <%= @itinerary.title %><!-- AddThis Button BEGIN -->
+
+  <div class="itin-show-title">
+
+
+
+
+  <div class="add-this">
+    <%= @itinerary.title %>
+    <!-- AddThis Button BEGIN -->
     <a
     class="addthis_button"
     addthis:url="http://goinplac.es"
@@ -25,8 +31,6 @@
     addthis:description="Great Escape Artists Steal (itineraries)">
     <%= image_tag("share.png", class: "sharer-small") %>
     </a><br></div>
-
-
     <!-- AddThis Button END -->
   </div>
 
@@ -40,6 +44,7 @@
 
   <div class="itin-show-info">
     <!-- gets the items for each itinerary here -->
+
     <% @items.each do |item| %>
     <div class="itin-item-name">
       <%= item.name %><br>
@@ -47,18 +52,19 @@
     <div class="itin-item-desc">
       <%= item.description %><br>
     </div>
-    <img src="<%= item.img_url %>" width="25%"><br>
-
-    <% if item.links[0].is_complete == false %>
-      <%= form_for item.links[0] do |f| %>
-        <%= f.label "mark this complete?" %>
-        <%= f.check_box :is_complete %>
-        <%= f.submit %>
+    <img src="<%= item.img_url %>" width="25%"><br><br>
+      <% if item.links[0] == false %>
+        <% "You haven't done it yet, get after it" %>
+      <% else %>
+        <% "Item has been completed" %>
       <% end %>
-    <% else %>
-      <%= "Doneso" %>
+      <%= form_for item.links[0] do |f| %>
+        <%= f.label "Toggle the status?" %>
+        <%= f.check_box :is_complete %><br>
+        <%= f.submit 'update' %>
+      <% end %>
     <% end %>
-    <% end %>
+    <br><br>
   </div>
 
   <div class="copy-add-item">
