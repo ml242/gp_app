@@ -34,15 +34,15 @@
     <!-- AddThis Button END -->
   </div>
 
-  <div class="itin-show-img">
+  <div class="itin-show-img"> <!-- ITIN IMAGE -->
     <img src="<%= @itinerary.img_url %>" width='60%'>
   </div>
-
-  <div class="itin-show-desc">
+  <div class="itin-show-desc"> <!-- ITIN Description -->
     <%= @itinerary.description %><br>
   </div>
 
   <div class="itin-show-info">
+
     <!-- gets the items for each itinerary here -->
 
     <% @items.each do |item| %>
