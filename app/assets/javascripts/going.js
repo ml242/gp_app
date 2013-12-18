@@ -8,10 +8,10 @@ $(document).ready(function() {
       $(collapse_content_selector).toggle(function(){
         if($(this).css('display')=='none'){
                                 //change the button label to be 'Show'
-                                toggle_switch.html('Edit User Settings');
+                                toggle_switch.html('EDIT');
                               }else{
                                 //change the button label to be 'Hide'
-                                toggle_switch.html('Hide User Settings');
+                                toggle_switch.html('HIDE');
                               }
                             });
     });
