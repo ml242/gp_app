@@ -32,7 +32,7 @@ class ItinerariesController < ApplicationController
     id = params[:id]
     @itinerary = Itinerary.find(id)
     @items = @itinerary.items
-    @link = Link.find(@itinerary.id)
+    @link = Link.where(@itinerary.id)
   end
 
   def edit
