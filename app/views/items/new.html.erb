@@ -1,7 +1,7 @@
 <div class="new-item-container">
 
   <%= form_for(@item) do |f| %>
-  <h1 class="new-item-field" >Create new item here dog</h1>
+  <h1 class="new-item-field" >Create a new item here.</h1><br><br>
   <%= f.label :name %>
   <%= f.text_field :name, :class => "new-item-field" %><br>
 
@@ -12,10 +12,10 @@
   <%= f.text_area :description, :class => "new-item-field", size: "60x12" %><br>
 
   <%= hidden_field_tag :itinerary_id, params["itinerary_id"] %>
-  <br><br>
-  <%= f.submit "Create item", :class => "red-red-btn" %> |
+  <div class="movin-right">
+  <%= f.submit "Create item", :class => "red-red-btn" %>
   <%= button_to "Cancel", items_path, :class => "red-red-btn"  %>
-
+  </div>
   <% end %>
 
 </div>
