@@ -1,13 +1,23 @@
+
 .clearfix, %clearfix
   &:after
     content: ""
     display: table
     clear: both
 
-.empty-div
+///////////////////
+// WELCOME INDEX //
+///////////////////
 
-.gp-title
-  width: 50%
+.welcome-container
+  @include outer-container
+  .col-four
+    @include span-columns(4)
+  .gp-title
+    @include span-columns(4)
+
+
+  // width: 50%
   // margin-left: 25%
   // margin-top: 2%
 
