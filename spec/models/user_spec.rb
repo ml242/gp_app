@@ -10,7 +10,7 @@ describe User do
   #   User.create!(@user_attr)
   # end
 
-  it "should require an email address" do
+  it "requires an email address" do
     no_email_user = User.create(password: "password")
     expect(no_email_user).to throw(error)
   end
