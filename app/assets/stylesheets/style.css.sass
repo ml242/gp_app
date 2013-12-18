@@ -5,6 +5,8 @@
   font-weight: normal
   font-style: normal
 
+$white: #ffffff
+
 %scripty-font
   font-family: 'deutsche_normalschriftregular'
 
@@ -80,7 +82,7 @@ input
 
 .gp-logo
   @extend %scripty-font
-  color: white
+  color: $white
   font-size: 45px
   margin-left: 3%
   padding-top: 15px
@@ -208,7 +210,7 @@ input
   font-family: Gotham
   margin-bottom: 50px
   a
-    color: white
+    color: $white
     font-size: 16px
   a:link
     text-decoration: none
@@ -269,6 +271,64 @@ input
   font-family: Gotham
   font-size: 14px
   line-height: 130%
+
+
+/////////////////////////////
+// NEW ITINERARY FORM PAGE //
+/////////////////////////////
+
+.new-itinerary-page
+  max-width: 1440px
+  min-width: 700px
+
+.new-itinerary-page
+  h1
+    margin-left: 5%
+    font-size: 25px
+    font-family: Gotham
+    margin-bottom: 20px
+
+.itin-form
+  font-family: Helvetica
+  font-size: 18px
+  margin-left: 5%
+
+.create-itin-btn
+  font-weight: bold
+  font-size: 20px
+  font-family: Gotham
+  margin-top: 20px
+  a
+    font-size: 16px
+    color: $white
+  a:link
+    color: $white
+    text-decoration: none
+  a:visited
+    text-decoration: none
+  a:hover
+    text-decoration: underline
+  a:active
+    text-decoration: underline
+  input
+    color: $white
+    background-color: #C52326
+    border-radius: 5px
+    width: 135px
+    height: 60px
+    border: none
+    margin: 0
+    padding: 0
+  button
+    color: $white
+    background-color: #C52326
+    border-radius: 5px
+    width: 135px
+    height: 60px
+    border: none
+    margin: 0
+    padding: 0
+
 
 
 ////////////
