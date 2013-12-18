@@ -1,10 +1,8 @@
-
 .clearfix, %clearfix
   &:after
     content: ""
     display: table
     clear: both
-
 
 ///////////////////
 // WELCOME INDEX //
@@ -12,31 +10,29 @@
 
 .welcome-container
   @include outer-container
-  .col-four
-    @include span-columns(4)
+  .login-page-wrapper
+    @include span-columns(6)
+    @include shift(3)
+    background-color: rgba(0,0,0,.4)
+    padding: 10px
   .gp-title
-    @include span-columns(4)
+    margin: 0 auto
+    display: block
+    max-width: 300px
+  .login-page-container
+    width: 100%
 
-
-  // width: 50%
-  // margin-left: 25%
-  // margin-top: 2%
-
-.login-page-container
-  width: 30%
-  margin-left: 11%
-  margin-top: 2%
 
 .login-form-box
-  background-color: rgba(230, 230, 230, 0.65)
-  //width: 600px;
-  //margin-left: 130px;
-  margin-top: 40px
+  @include span-columns(6)
+  @include shift(3)
+  z-index: -1
+  background-color: rgba(230, 230, 230, 0.01)
   padding: 20px
   border-radius: 5%
   h2
     font-size: 50px
-    color: #00000F
+    color: #00000F  
     text-align: center
     padding-bottom: 15px
 
@@ -47,28 +43,29 @@
   font-size: 25px
 
 .login-btn img
-  width: 25%
+  width: 40%
   margin-top: 3%
+
 #important
   display: inline-block
 
 input
-  width: 25%
+  width: 40%
   display: inline-block
   //padding: 5px
   font-size: 15px
   //text-shadow: 0px 1px 0px #fff
   outline: none
-  //background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe), to(white))
-  //background: -moz-linear-gradient(top, #bcbcbe, white)
+  //background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe ), to(white))
+  //background: -moz-linear-gradient(top, #bcbcbe  , white)
   //-webkit-border-radius: 3px
   //-moz-border-radius: 3px
   //border-radius: 3px
-  //border: 1px solid #717171
-
+  //border: 1px solid #717171  
 
 #fb-button
-  margin-top: 15%
-  margin-left: 15%
+  text-align: center
+  @include span-columns(6)
+  @include shift(3)
   img
-    width: 216px
+    width: 200px
