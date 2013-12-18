@@ -1,6 +1,8 @@
 <% if user_signed_in? %>
 <div class="nav-bar-main">
-  <%= image_tag("gp-white.png", class: "gp-title-nav") %>
+  <div class="gp-logo">
+    goin' places
+  </div>
 
   <div class="nav-bar-right">
     Hello, <%= current_user.name %> | <a href="/users/<%= current_user.id %>"> My Dashboard </a> |
