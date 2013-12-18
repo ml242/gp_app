@@ -53,7 +53,6 @@
       <%= item.description %><br>
     </div>
     <img src="<%= item.img_url %>" width="25%"><br><br>
-      <% binding.pry %>
       <% a = Link.where(item_id: item.id) %>
       <% if a[0].is_complete == false %>
         <%= "You haven't done it yet, get after it" %>
