@@ -34,8 +34,8 @@ class ItinerariesController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @itinerary = Itinerary.find(id)
+    # id = params[:id]
+    @itinerary = Itinerary.find(params[:id])
     @items = @itinerary.items
     @link = Link.where(@itinerary.id)
   end

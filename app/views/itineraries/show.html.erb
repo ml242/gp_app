@@ -3,12 +3,12 @@
   <div id="notice"><%= flash[:notice] %></div>
   <% end %>
 
-
+<%   %>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
 
   <div class="itin-show-edit">
     <% if current_user.id == @itinerary.user_id %>
-    <button><%= link_to 'Edit Itinerary', edit_itinerary_path %></button> <button><%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %></button> <button>
+    <button><%= link_to 'Edit Itinerary', edit_itinerary_path %></button> <button><%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %></button> <button><%   %>
       <% end %><%= link_to 'Itineraries', itineraries_path %>
     </button>
     <br>
@@ -30,7 +30,7 @@
     </a><br></div>
     <!-- AddThis Button END -->
   </div>
-
+<%   %>
   <div class="itin-show-container">
   <div class="itin-show-img"> <!-- ITIN IMAGE -->
     <img src="<%= @itinerary.img_url %>" width='60%'>
@@ -48,7 +48,7 @@
     <% @items.each do |item| %>
     <div class="itin-item-name">
       <%= item.name %><br>
-    </div>
+    </div><%   %>
     <div class="itin-item-desc">
       <%= item.description %><br>
     </div>
@@ -56,7 +56,7 @@
       <% if current_user.id == @itinerary.user_id %>
       <% a = Link.where(item_id: item.id) %>
       <% if a[0].is_complete == false %>
-        <%= "You haven't done it yet, get after it" %>
+        <%= "You haven't done it yet, get after it" %><%   %>
       <% else %>
         <%= "Item has been completed" %>
       <% end %>
@@ -76,11 +76,11 @@
       <button><%= link_to 'COPY ITINERARY', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
       </button>
     <% end %>
-
+<%   %>
     <div class="add-item-to-itin-btn">
       <% if current_user.id == @itinerary.user_id %>
         <button><%= link_to 'ADD NEW ITEM', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
-        </button>
+        </button><%   %>
         <button>
           <%= link_to 'SEARCH ITEMS', "/items", :method => :get %>
         </button>
