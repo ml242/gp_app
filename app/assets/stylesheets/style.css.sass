@@ -1,3 +1,6 @@
+@import "bourbon/bourbon"
+@import "neat/neat"
+
 @font-face
   font-family: 'deutsche_normalschriftregular'
   src: url('deutsche_normalschrift_a.eot')
@@ -74,15 +77,24 @@ input
   margin-left: 39%
   width: 8%
 
+///////////////
+// ALL PAGES //
+///////////////
+
+.container
+  @include outer-container
+
 /////////////////
 // TOP NAV BAR //
 /////////////////
 
 .nav-bar-main
+  @include span-columns(11)
   min-width: 800px
   max-width: 1440px
 
 .gp-logo
+  @include span-columns(3)
   @extend %scripty-font
   color: $white
   font-size: 45px
