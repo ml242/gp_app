@@ -1,14 +1,19 @@
 <div class="itin-container">
+
   <div class="itin-title">
-    <h1 class="itineraries-index">Browse itineraries</h1>
+    <h1 class="itineraries-index">Featured itineraries</h1>
   </div>
 
   <div class="itin-slideshow">
     <%= render 'slideshow' %>
   </div>
 
-  <div class="post-new">
-    <button><%= link_to 'NEW ITINERARY', new_itinerary_path %></button>
+<!--   <div class="post-new">
+    <button><%#= link_to 'NEW ITINERARY', new_itinerary_path %></button>
+  </div> -->
+
+  <div class="itin-title">
+    Browse itineraries
   </div>
 
   <section class="itinerary-item">
@@ -17,8 +22,7 @@
       <div class="itin-inside-box">
         <h2><%= itinerary.title %></h2>
         <div class="itin-content">
-        <div class="itin-img">
-          <a href="/itineraries/<%= itinerary.id %>"><img class="itin-img" src="<%= itinerary.img_url %>"></a></div>
+          <a href="/itineraries/<%= itinerary.id %>"><img class="itin-img" src="<%= itinerary.img_url %>"></a>
         <div class="itin-desc"><%= itinerary.description %></div>
         </div>
       </div>
