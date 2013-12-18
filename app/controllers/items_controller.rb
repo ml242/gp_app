@@ -39,7 +39,6 @@ class ItemsController < ApplicationController
     if params["itinerary_id"] != ""
       @item.itineraries << Itinerary.find(params["itinerary_id"])
       @item.update_attributes(params[:item])
-      binding.pry
       @item.save
       flash[:notice] = 'You have added an item to your itinerary.'
       redirect_to @item
