@@ -11,15 +11,15 @@
 
 .welcome-container
   @include outer-container
-  .col-four
-    @include span-columns(4)
+  .login-page-wrapper
+    @include span-columns(6)
+    @include shift(3)
   .gp-title
-    @include span-columns(4)
-
-
-  // width: 50%
-  // margin-left: 25%
-  // margin-top: 2%
+    margin: 0 auto
+    display: block
+    max-width: 300px
+  .login-page-container
+    width: 100%
 
 .login-page-container
   width: 30%
@@ -67,7 +67,8 @@ input
 
 
 #fb-button
-  margin-top: 15%
-  // margin-left: 39%
+  text-align: center
+  @include span-columns(6)
+  @include shift(3)
   img
     width: 216px
