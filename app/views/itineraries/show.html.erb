@@ -14,15 +14,12 @@
     <br>
   </div>
 
-
-
   <div class="itin-show-title">
-
-
-
 
   <div class="add-this">
     <%= @itinerary.title %>
+    created by <%= @itinerary.user.name %><br>
+
     <!-- AddThis Button BEGIN -->
     <a
     class="addthis_button"
@@ -34,11 +31,14 @@
     <!-- AddThis Button END -->
   </div>
 
+  <div class="itin-show-container">
   <div class="itin-show-img"> <!-- ITIN IMAGE -->
     <img src="<%= @itinerary.img_url %>" width='60%'>
   </div>
   <div class="itin-show-desc"> <!-- ITIN Description -->
+    Itinerary created on: <%= @itinerary.created_at %><br><br>
     <%= @itinerary.description %><br>
+  </div>
   </div>
 
   <div class="itin-show-info">
