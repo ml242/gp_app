@@ -1,7 +1,7 @@
 <div class="new-item-container">
-<h1>Create new item here dog</h1>
 
   <%= form_for(@item) do |f| %>
+  <h1 class="new-item-field" >Create new item here dog</h1>
   <%= f.label :name %>
   <%= f.text_field :name, :class => "new-item-field" %><br>
 
@@ -13,7 +13,7 @@
 
   <%= hidden_field_tag :itinerary_id, params["itinerary_id"] %>
 
-  <%= f.submit "Create item" %>
+  <%= f.submit "Create item", :class => "red-red-btn" %>
   <%= link_to "Cancel", items_path %>
 
   <% end %>
