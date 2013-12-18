@@ -14,6 +14,8 @@
   .login-page-wrapper
     @include span-columns(6)
     @include shift(3)
+    background-color: rgba(0,0,0,.4)
+    padding: 10px
   .gp-title
     margin: 0 auto
     display: block
@@ -21,16 +23,12 @@
   .login-page-container
     width: 100%
 
-.login-page-container
-  width: 30%
-  // margin-left: 36%
-  margin-top: 2%
 
 .login-form-box
+  @include span-columns(6)
+  @include shift(3)
+  z-index: -1
   background-color: rgba(230, 230, 230, 0.01)
-  //width: 600px;
-  //margin-left: 130px;
-  //margin-top: 40px
   padding: 20px
   border-radius: 5%
   h2
@@ -46,13 +44,14 @@
   font-size: 25px
 
 .login-btn img
-  width: 25%
+  width: 40%
   margin-top: 3%
+
 #important
   display: inline-block
 
 input
-  width: 25%
+  width: 40%
   display: inline-block
   //padding: 5px
   font-size: 15px
@@ -65,10 +64,9 @@ input
   //border-radius: 3px
   //border: 1px solid #717171
 
-
 #fb-button
   text-align: center
   @include span-columns(6)
   @include shift(3)
   img
-    width: 216px
+    width: 200px
