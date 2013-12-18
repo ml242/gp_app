@@ -53,14 +53,16 @@
       <%= item.description %><br>
     </div>
     <img src="<%= item.img_url %>" width="25%"><br><br>
-      <% if item.links[0] == false %>
-        <% "You haven't done it yet, get after it" %>
+      <% binding.pry %>
+      <% a = Link.where(item_id: item.id) %>
+      <% if a[0].is_complete == false %>
+        <%= "You haven't done it yet, get after it" %>
       <% else %>
-        <% "Item has been completed" %>
+        <%= "Item has been completed" %>
       <% end %>
       <%= form_for item.links[0] do |f| %>
         <%= f.label "Toggle the status?" %>
-        <%= f.check_box :is_complete %><br>
+        <%#= f.check_box :is_complete %><br>
         <%= f.submit 'update' %>
       <% end %>
     <% end %>
