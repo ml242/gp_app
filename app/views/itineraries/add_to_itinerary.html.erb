@@ -1,19 +1,26 @@
 <div class="new-item-page">
-<section>
-    <h1> "<%= @item.name %>"</h1>
+  <h1>"<%= @item.name %>"</h1>
 
-        <%= form_for(@item) do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %><br>
+  <div class="item-form">
+  <%= form_for(@item) do |f| %>
 
-        <%= f.label :img_url %>
-        <%= f.text_field :img_url %><br>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
 
-        <%= f.label :description %>
-        <%= f.text_area :description, size: "60x12" %><br>
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %><br>
 
-        <%= f.submit "Update item" %>
-        <%= link_to "Cancel", items_path %>
+  <%= f.label :description %>
+  <%= f.text_area :description, size: "60x8" %><br>
 
-      <% end %>
-</section>
+  <div class="update-item-btn">
+    <%= f.submit "Update item" %>
+  </div>
+  <button>
+    <%= link_to "Cancel", items_path %>
+  </button>
+
+  </div>
+  <% end %>
+
+</div>
