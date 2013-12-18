@@ -53,6 +53,7 @@
       <%= item.description %><br>
     </div>
     <img src="<%= item.img_url %>" width="25%"><br><br>
+      <% if current_user.id == @itinerary.user_id %>
       <% a = Link.where(item_id: item.id) %>
       <% if a[0].is_complete == false %>
         <%= "You haven't done it yet, get after it" %>
@@ -63,6 +64,7 @@
         <%= f.label "Toggle the status?" %>
         <%#= f.check_box :is_complete %><br>
         <%= f.submit 'update' %>
+        <% end %>
       <% end %>
     <% end %>
     <br><br>
