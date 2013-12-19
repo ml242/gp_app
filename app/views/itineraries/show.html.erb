@@ -28,7 +28,7 @@
     <div class="itin-show-desc">
       <!-- ITIN Description -->
       <div class="add-this">
-        Itinerary created on: <%= @itinerary.created_at %>
+        Itinerary created on: <%= @itinerary.created_at.to_formatted_s(:long) %>
         <!-- AddThis Button BEGIN -->
         <a
         class="addthis_button"
