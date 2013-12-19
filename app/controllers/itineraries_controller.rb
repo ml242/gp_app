@@ -6,11 +6,11 @@ class ItinerariesController < ApplicationController
       @itineraries = Itinerary.near(params[:search], 50, :order => :distance)
       @users = User.all
     else
-      @itineraries = Itinerary.all
+
+      @itineraries = Itinerary.where('user_id != ?',current_user.id)
       @users = User.all
     end
     @rand_itineraries = @itineraries.shuffle[1..10]
-    @users = User.all
   end
 
   def new
@@ -22,11 +22,11 @@ class ItinerariesController < ApplicationController
     @itinerary.user = current_user
     @itinerary.user_id = current_user.id
     if @itinerary.save
-      a = Geocoder.search(@itinerary.title)
-      geocode = a[0]
-      @itinerary.latitude = geocode.latitude
-      @itinerary.longitude = geocode.longitude
-      @itinerary.save
+    #   a = Geocoder.search(@itinerary.title)
+    #   geocode = a[0]
+    #   @itinerary.latitude = geocode.latitude
+    #   @itinerary.longitude = geocode.longitude
+    #   @itinerary.save
       redirect_to @itinerary
     else
       render :new
