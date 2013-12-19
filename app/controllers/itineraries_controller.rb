@@ -2,14 +2,13 @@ class ItinerariesController < ApplicationController
 
 
   def index
-    if params[:search].present?
-      @itineraries = Itinerary.near(params[:search], 50, :order => :distance)
-      @users = User.all
-    else
-
-      @itineraries = Itinerary.where('user_id != ?',current_user.id)
-      @users = User.all
-    end
+    # if params[:search].present?
+    #   @itineraries = Itinerary.near(params[:search], 50, :order => :distance)
+    #   @users = User.all
+    # else
+    @users = User.all
+    # @itineraries = Itinerary.where('user_id != ?',current_user.id)
+    @itineraries = Itinerary.where(:user != current_user)
     @rand_itineraries = @itineraries.shuffle[1..10]
   end
 
