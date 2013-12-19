@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :name, :presence => true
   validates :email, :uniqueness => true, :presence => true
   # attr_accessicble :title, :body
+
   has_many :itineraries
 
 # devise :omniauthable, # ...

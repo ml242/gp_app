@@ -1,100 +1,98 @@
 <div class="itin-show-container">
   <% if flash[:notice] %>
-  <div id="notice"><%= flash[:notice] %></div>
+    <div id="notice"><%= flash[:notice] %></div>
   <% end %>
 
-<%   %>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
 
   <div class="itin-show-edit">
     <% if current_user.id == @itinerary.user_id %>
-    <button><%= link_to 'Edit Itinerary', edit_itinerary_path %></button> <button><%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %></button> <button><%   %>
-      <% end %><%= link_to 'Itineraries', itineraries_path %>
-    </button>
+      <button><%= link_to 'Edit Itinerary', edit_itinerary_path %></button> <button><%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %></button>
+    <% end %>
     <br>
   </div>
 
   <div class="itin-show-title">
-
-
     <%= @itinerary.title %>
     created by <%= @itinerary.user.name %><br>
-
-
-
   </div>
-<%   %>
+
+
   <div class="itin-show-container">
-  <div class="itin-show-img"> <!-- ITIN IMAGE -->
-    <img src="<%= @itinerary.img_url %>" width='60%'>
-  </div>
-  <div class="itin-show-desc">
-    <!-- ITIN Description -->
-    <div class="add-this">
-    Itinerary created on: <%= @itinerary.created_at %>
-    <!-- AddThis Button BEGIN -->
-    <a
-    class="addthis_button"
-    addthis:url="http://goinplac.es"
-    addthis:title="Going Places"
-    addthis:description="Great Escape Artists Steal (itineraries)">
-
-
-    <%= image_tag("share.png", class: "sharer-small") %>
-    </a><br>
-  <!-- AddThis Button END --><br>
-
-    <%= @itinerary.description %><br>
-  </div>
-  </div>
-  </div>
-
-  <div class="itin-show-info">
-
-    <!-- gets the items for each itinerary here -->
-
-    <% @items.each do |item| %>
-    <div class="itin-item-name">
-      <%= item.name %><br>
-    </div><%   %>
-    <div class="itin-item-desc">
-      <%= item.description %><br>
+    <div class="itin-show-img"> <!-- ITIN IMAGE -->
+      <img src="<%= @itinerary.img_url %>" width='60%'>
     </div>
-    <img src="<%= item.img_url %>" width="25%"><br><br>
-      <% if current_user.id == @itinerary.user_id %>
-      <% a = Link.where(item_id: item.id) %>
-      <% if a[0].is_complete == false %>
-        <%= "You haven't done it yet, get after it" %><%   %>
-      <% else %>
-        <%= "Item has been completed" %>
-      <% end %>
-      <%= form_for item.links[0] do |f| %>
-        <%= f.label "Toggle the status?" %>
-        <%#= f.check_box :is_complete %><br>
-        <%= f.submit 'update' %>
-        <% end %>
-        <%= link_to 'Edit Item', edit_item_path %>
-        <%= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?" %>
-      <% end %>
-    <% end %>
-    <br><br>
-  </div>
+    <div class="itin-show-desc">
+      <!-- ITIN Description -->
+      <div class="add-this">
+        Itinerary created on: <%= @itinerary.created_at %>
+        <!-- AddThis Button BEGIN -->
+        <a
+        class="addthis_button"
+        addthis:url="http://goinplac.es"
+        addthis:title="Going Places"
+        addthis:description="Great Escape Artists Steal (itineraries)">
 
-  <div class="copy-add-item">
-    <% if current_user.id != @itinerary.user_id %>
-    <div class="copy-itinerary">
-      <button><%= link_to 'COPY ITINERARY', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
-      </button>
-    <% end %>
-<%   %>
+
+        <%= image_tag("share.png", class: "sharer-small") %>
+      </a><br>
+      <!-- AddThis Button END --><br>
+
+      <%= @itinerary.description %><br>
+    </div>
+  </div>
+</div>
+
+<div class="itin-show-info">
+
+  <!-- gets the items for each itinerary here -->
+
+
+<% @links.each do |link| %>
+  <div class="itin-item-name">
+    <% item = link.item %><br>
+  </div>
+  <div class="itin-item-desc">
+    <%= item.description %><br>
+  </div>
+  <img src="<%= item.img_url %>" width="25%"><br><br>
+
+<div class="check-box">
+  <%= form_for link do |f| %>
+    <% if link.is_complete == true %>
+      <%= image_submit_tag("checkbox.png", :is_complete => 'false') %>
+    <% else %>
+      <%= image_submit_tag("checkbox-empty.png", :is_complete => 'true') %>
+  <% end %>
+</div>
+
+  <%= link_to 'Edit Item', edit_item_path %>
+  <%= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?" %>
+<% end %>
+  <br><br>
+</div>
+
+
+
+
+<div class="copy-add-item">
+  <% if current_user.id != @itinerary.user_id %>
+  <div class="copy-itinerary">
+    <button><%= link_to 'COPY ITINERARY', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
+    </button>
+  <% end %>
+
+
+
     <div class="add-item-to-itin-btn">
       <% if current_user.id == @itinerary.user_id %>
-        <button><%= link_to 'ADD NEW ITEM', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
-        </button><%   %>
-        <button>
-          <%= link_to 'SEARCH ITEMS', "/items", :method => :get %>
-        </button>
+      <button><%= link_to 'ADD NEW ITEM', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
+      </button>
+      <button>
+        <%= link_to 'SEARCH ITEMS', "/items", :method => :get %>
+      </button>
       <% end %>
     </div>
   </div>
 </div>
+<% end %>
