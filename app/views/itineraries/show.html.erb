@@ -5,20 +5,20 @@
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
 
+  <div class="itin-title show">
+    <%= @itinerary.title %>
+  </div>
+  <div class="itin-user">
+    Itinerary by: <%= @itinerary.user.name %>
+  </div>
   <div class="itin-show-edit">
     <% if current_user.id == @itinerary.user_id %>
-      <button><%= link_to 'Edit Itinerary', edit_itinerary_path %></button> <button><%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %></button>
+      <button class="red-red-btn sm"><%= link_to 'Edit Itinerary', edit_itinerary_path %></button>
+      <button class="red-red-btn sm"><%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %></button>
     <% end %>
-    <br>
   </div>
-
-  <div class="itin-show-title">
-    <%= @itinerary.title %>
-    created by <%= @itinerary.user.name %><br>
-  </div>
-
-
-  <div class="itin-show-container">
+  <div class="col-four"></div>
+  <div class="itin-show-box">
     <div class="itin-show-img"> <!-- ITIN IMAGE -->
       <img src="<%= @itinerary.img_url %>" width='60%'>
     </div>

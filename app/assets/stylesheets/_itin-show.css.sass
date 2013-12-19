@@ -1,5 +1,62 @@
 .itin-show-container
   @include outer-container
 
+.itin-title.show
+  @include span-columns(11)
+  @include omega()
+  margin-bottom: 10px
+
+.itin-user
+  @include span-columns(4)
+  margin-left: 3%
+  margin-bottom: 2%
+
+.col-four
+  @include span-columns(4)
+
+.itin-show-edit
+  @include span-columns(6)
+
+  img
+    width: 100%
+    height: auto
+
+  button.red-red-btn.sm
+    font-family: Helvetica
+    width: 55px
+    height: 25px
+    a
+      font-size: small
+
+.itin-show-box
+  @include span-columns(11)
+
 .check-box
-  width: 25%
+  width: 10%
+
+.add-this
+  display: inline-block
+
+.itin-show-desc
+  margin-bottom: 25px
+  font-family: Gotham
+  font-size: 18px
+
+.hidden
+  display: none
+
+.each-itin-item
+  @include span-columns(3)
+  @include omega(4n)
+  h2
+    font-family: Gotham
+    font-size: 25px
+  .itin-item-desc
+    display: block
+    margin-top: 20px
+    display: none
+    img
+      width: 100%
+      height: auto
+
+
