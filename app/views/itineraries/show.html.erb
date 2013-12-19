@@ -49,39 +49,27 @@
 
   <div class="itin-show-item">
     <!-- gets the items for each itinerary here -->
+    <div class="each-item-inside-box">
+      <% @links.each do |link| %>
+      <div class="each-itin-item">
+        <% item = link.item %>
+        <h2><%= item.name %></h2>
 
-    <% @links.each do |link| %>
-    <div class="each-itin-item">
-      <% item = link.item %>
-      <h2><%= item.name %></h2>
-    </div>
+      <div class="item-content">
 
-    <!-- Checkbox for each To-Do item -->
-    <% if current_user.id == @itinerary.user_id %>
-      <div class="check-box">
-        <%= form_for link do |f| %>
-        <% if link.is_complete == true %>
-        <%= image_submit_tag("checkbox.png", :is_complete => 'false') %>
-        <% else %>
-        <%= image_submit_tag("checkbox-empty.png", :is_complete => 'true') %>
-        <% end %>
+      <!-- Checkbox for each To-Do item -->
+      <% if current_user.id == @itinerary.user_id %>
+        <%= render 'checkbox' %> <!-- edit and del btns too -->
+      <% end %>
+
+      <div class="itin-content">
+        <img src="<%= item.img_url %>" width="200px"><br><br>
+        <%= item.description %><br>
       </div>
-    <% end %>
-    <!-- Edit and Delete Buttons for each item -->
-    <button class="red-red-btn sm">
-      <%= link_to 'Edit Item', edit_item_path %>
-    </button>
-    <button class="red-red-btn sm">
-      <%= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?"%>
-    </button>
-    <% end %>
-
-    <div class="itin-content">
-      <img src="<%= item.img_url %>" width="200px"><br><br>
-      <%= item.description %><br>
+      </div>
+      </div>
+      <% end %>
     </div>
-    <% end %>
-
   </div> <!-- ends itin show box -->
 
 
