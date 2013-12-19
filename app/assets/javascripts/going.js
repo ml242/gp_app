@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#settingsBtn').click(function(e){
+  $('.nav-toggle').click(function(e){
       //get collapse content selector
       e.preventDefault();
       var toggle_switch = $(this);
@@ -12,7 +12,7 @@ $(document).ready(function() {
       collapse_content_selector.toggle(function(){
         if($(this).css('display')=='none'){
                                 //change the button label to be 'Show'
-                                toggle_switch.html('EDIT');
+                                toggle_switch.html('SETTINGS');
                               }else{
                                 //change the button label to be 'Hide'
                                 toggle_switch.html('HIDE');
