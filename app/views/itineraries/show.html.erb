@@ -45,10 +45,10 @@
     </div>
   </div>
 
-  <div class="itin-show-box">
 
+
+  <div class="itin-show-item">
     <!-- gets the items for each itinerary here -->
-
 
     <% @links.each do |link| %>
     <div class="each-itin-item">
@@ -57,14 +57,16 @@
     </div>
 
     <!-- Checkbox for each To-Do item -->
-    <div class="check-box">
-      <%= form_for link do |f| %>
-      <% if link.is_complete == true %>
-      <%= image_submit_tag("checkbox.png", :is_complete => 'false') %>
-      <% else %>
-      <%= image_submit_tag("checkbox-empty.png", :is_complete => 'true') %>
-      <% end %>
-    </div>
+    <% if current_user.id == @itinerary.user_id %>
+      <div class="check-box">
+        <%= form_for link do |f| %>
+        <% if link.is_complete == true %>
+        <%= image_submit_tag("checkbox.png", :is_complete => 'false') %>
+        <% else %>
+        <%= image_submit_tag("checkbox-empty.png", :is_complete => 'true') %>
+        <% end %>
+      </div>
+    <% end %>
     <!-- Edit and Delete Buttons for each item -->
     <button class="red-red-btn sm">
       <%= link_to 'Edit Item', edit_item_path %>
@@ -75,7 +77,7 @@
     <% end %>
 
     <div class="itin-content">
-      <img src="<%= item.img_url %>"><br><br>
+      <img src="<%= item.img_url %>" width="200px"><br><br>
       <%= item.description %><br>
     </div>
     <% end %>
@@ -85,13 +87,12 @@
 
 
 
-  <div class="copy-add-item">
+    <div class="copy-add-item">
     <% if current_user.id != @itinerary.user_id %>
       <div class="copy-itinerary">
-        <%= link_to 'COPY', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?", :class => "red-red-btn sm" %>
-      <% end %>
-
-
+        <button class="red-red-btn copy"><%= link_to 'COPY', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
+        </button>
+    <% end %>
 
       <div class="add-item-to-itin-btn">
         <% if current_user.id == @itinerary.user_id %>
