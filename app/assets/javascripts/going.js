@@ -1,18 +1,14 @@
 $(document).ready(function() {
-  $('.nav-toggle').click(function(e){
+  $('.nav-toggle').click(function(){
       //get collapse content selector
-      e.preventDefault();
-      var toggle_switch = $(this);
-
-
-      var collapse_content_selector = $('#edit-dash');
+      var collapse_content_selector = $(this).attr('href');
 
       //make the collapse content to be shown or hide
-
-      collapse_content_selector.toggle(function(){
+      var toggle_switch = $(this);
+      $(collapse_content_selector).toggle(function(){
         if($(this).css('display')=='none'){
                                 //change the button label to be 'Show'
-                                toggle_switch.html('SETTINGS');
+                                toggle_switch.html('EDIT');
                               }else{
                                 //change the button label to be 'Hide'
                                 toggle_switch.html('HIDE');
