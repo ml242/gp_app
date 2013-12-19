@@ -1,23 +1,26 @@
 <div class="itin-show-container">
   <% if flash[:notice] %>
-    <div id="notice"><%= flash[:notice] %></div>
+  <div id="notice"><%= flash[:notice] %></div>
   <% end %>
 
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
 
   <div class="itin-title show">
     <%= @itinerary.title %>
   </div>
+
   <div class="itin-user">
     Itinerary by: <%= @itinerary.user.name %>
   </div>
+
   <div class="itin-show-edit">
     <% if current_user.id == @itinerary.user_id %>
-      <button class="red-red-btn sm"><%= link_to 'Edit Itinerary', edit_itinerary_path %></button>
-      <button class="red-red-btn sm"><%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %></button>
+    <button class="red-red-btn sm"><%= link_to 'Edit Itinerary', edit_itinerary_path %></button>
+    <button class="red-red-btn sm"><%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %></button>
     <% end %>
   </div>
   <div class="col-four"></div>
+
   <div class="itin-show-box">
     <div class="itin-show-img"> <!-- ITIN IMAGE -->
       <img src="<%= @itinerary.img_url %>" width='60%'>
@@ -41,68 +44,62 @@
       <%= @itinerary.description %><br>
     </div>
   </div>
-</div>
 
-<div class="itin-show-box">
+  <div class="itin-show-box">
 
-  <!-- gets the items for each itinerary here -->
+    <!-- gets the items for each itinerary here -->
 
 
-<% @links.each do |link| %>
-  <div class="each-itin-item">
-    <% item = link.item %>
-    <h2><%= item.name %></h2>
-  </div>
+    <% @links.each do |link| %>
+    <div class="each-itin-item">
+      <% item = link.item %>
+      <h2><%= item.name %></h2>
+    </div>
 
-  <!-- Checkbox for each To-Do item -->
-  <div class="check-box">
-    <%= form_for link do |f| %>
+    <!-- Checkbox for each To-Do item -->
+    <div class="check-box">
+      <%= form_for link do |f| %>
       <% if link.is_complete == true %>
-        <%= image_submit_tag("checkbox.png", :is_complete => 'false') %>
+      <%= image_submit_tag("checkbox.png", :is_complete => 'false') %>
       <% else %>
-        <%= image_submit_tag("checkbox-empty.png", :is_complete => 'true') %>
-    <% end %>
-  </div>
-
-  <!-- Edit and Delete Buttons for each item -->
-  <button class="red-red-btn sm">
-    <%= link_to 'Edit Item', edit_item_path %>
-  </button>
-  <button class="red-red-btn sm">
-    <%= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?"%>
-  </button>
-
-  <div class="itin-content">
-    <img src="<%= item.img_url %>"><br><br>
-    <%= item.description %><br>
-  </div>
-
-
-<% end %>
-  <br><br>
-</div>
-
-
-
-
-<div class="copy-add-item">
-  <% if current_user.id != @itinerary.user_id %>
-  <div class="copy-itinerary">
-    <button class="red-red-btn"><%= link_to 'COPY', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
-    </button>
-  <% end %>
-
-
-
-    <div class="add-item-to-itin-btn">
-      <% if current_user.id == @itinerary.user_id %>
-      <button class="red-red-btn sm"><%= link_to 'ADD NEW ITEM', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
-      </button>
-      <button class="red-red-btn sm">
-        <%= link_to 'SEARCH ITEMS', "/items", :method => :get %>
-      </button>
+      <%= image_submit_tag("checkbox-empty.png", :is_complete => 'true') %>
       <% end %>
+    </div>
+    <!-- Edit and Delete Buttons for each item -->
+    <button class="red-red-btn sm">
+      <%= link_to 'Edit Item', edit_item_path %>
+    </button>
+    <button class="red-red-btn sm">
+      <%= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?"%>
+    </button>
+    <% end %>
+
+    <div class="itin-content">
+      <img src="<%= item.img_url %>"><br><br>
+      <%= item.description %><br>
+    </div>
+    <% end %>
+
+  </div> <!-- ends itin show box -->
+
+
+
+
+  <div class="copy-add-item">
+    <% if current_user.id != @itinerary.user_id %>
+      <div class="copy-itinerary">
+        <%= link_to 'COPY', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?", :class => "red-red-btn sm" %>
+      <% end %>
+
+
+
+      <div class="add-item-to-itin-btn">
+        <% if current_user.id == @itinerary.user_id %>
+        <%= link_to 'ADD NEW ITEM', "/itineraries/#{@itinerary.id}/items/new", :method => :get, :class => "red-red-btn sm" %>
+
+        <%#= link_to 'SEARCH ITEMS', "/items", :method => :get, :class => "red-red-btn sm"  %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-<% end %>
