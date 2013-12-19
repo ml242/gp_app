@@ -7,15 +7,15 @@
 
     <div class="itin-show-edit">
       <% if current_user.id == @itinerary.user_id %>
-      <%= button_to 'Edit Itinerary', edit_itinerary_path, :class => "red-red-btn"  %> <%= button_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?", :class => "red-red-btn"  %>
+      <%= button_to 'Edit Itinerary', edit_itinerary_path, :class => "red-red-btn"  %>
+      <%= button_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?", :class => "red-red-btn"  %>
       <% end %>
       <br>
     </div>
 
 
   <div class="itin-show-title"><br><br>
-    <%= @itinerary.title %>
-    created by <%= @itinerary.user.name %>
+    <%= @itinerary.title %> created by <%= @itinerary.user.name %>
   </div>
 
 
