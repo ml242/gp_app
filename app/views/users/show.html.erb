@@ -1,8 +1,8 @@
 <div class="user-show-container">
 
-  <div class="itin-title">
+  <h2 class="itin-title">
     Your Itineraries
-  </div>
+  </h2>
 
   <% if flash[:notice] %>
   <div id="notice"><%= flash[:notice] %></div>
@@ -20,7 +20,7 @@
   <!-- gets the items for each itinerary here inside the box-->
 
   <div class="inside-user-content">
-    <h2><%= itinerary.title %></h2>
+    <h3><%= itinerary.title %></h3>
 
     <div class="user-content">
       <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>"></a>
@@ -42,10 +42,11 @@
   </div>
   <% end %>
 
-  <button href="#collapse1" class="nav-toggle red-red-btn">SETTINGS</button>
-  <div id="collapse1" style="display:none">
-    <%= render 'edit_details' %>
-  </div>
+  <button id="settingsBtn" class="nav-toggle red-red-btn">SETTINGS</button>
+
+
+  <%= render 'edit_details' %>
+
 
 </div>
 

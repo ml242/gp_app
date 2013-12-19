@@ -1,11 +1,15 @@
 $(document).ready(function() {
-  $('.nav-toggle').click(function(){
+  $('#settingsBtn').click(function(e){
       //get collapse content selector
-      var collapse_content_selector = $(this).attr('href');
+      e.preventDefault();
+      var toggle_switch = $(this);
+
+
+      var collapse_content_selector = $('#edit-dash');
 
       //make the collapse content to be shown or hide
-      var toggle_switch = $(this);
-      $(collapse_content_selector).toggle(function(){
+
+      collapse_content_selector.toggle(function(){
         if($(this).css('display')=='none'){
                                 //change the button label to be 'Show'
                                 toggle_switch.html('EDIT');

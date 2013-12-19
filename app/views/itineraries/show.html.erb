@@ -95,7 +95,9 @@
 
       <div class="add-item-to-itin-btn">
         <% if current_user.id == @itinerary.user_id %>
-        <%= link_to 'ADD NEW ITEM', "/itineraries/#{@itinerary.id}/items/new", :method => :get, :class => "red-red-btn sm" %>
+        <button class="red-red-btn sm">
+          <%= link_to 'ADD ITEM', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
+        </button>
 
         <%#= link_to 'SEARCH ITEMS', "/items", :method => :get, :class => "red-red-btn sm"  %>
         <% end %>
