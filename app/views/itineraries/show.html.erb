@@ -61,7 +61,11 @@
 
 
 
-  <div class="itin-show-item">
+<!--- going to partial item content ---->
+
+
+
+<div class="itin-show-item">
     <!-- gets the items for each itinerary here -->
     <div class="each-item-inside-box">
       <% @links.each do |link| %>
@@ -92,7 +96,9 @@
           <% end %>
 
           <div class="itin-content">
-            <img src="<%= item.img_url %>" width="200px"><br><br>
+   <!-- <img src="<%#= item.img_url %>" width="200px"> -->
+   <a href="<%= @itinerary.id %>/items/<%= item.id %>"><img src="<%= item.img_url %>" width="200px"></a>
+          <br><br>
             <%= item.description %><br>
           </div>
         </div>
@@ -132,6 +138,9 @@
 
   </div> <!-- ends itin show box -->
 
+
+
+<%# render 'item-content' %>
 
 
 
