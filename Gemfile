@@ -15,7 +15,6 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jquery-rails'
 gem 'flickraw'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
