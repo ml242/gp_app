@@ -16,21 +16,42 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new
   end
 
-  def create
+  # def create
+  #   @itinerary = Itinerary.new(params[:itinerary])
+  #   @itinerary.user = current_user
+  #   @itinerary.user_id = current_user.id
+  #   if @itinerary.save
+  #   #   a = Geocoder.search(@itinerary.title)
+  #   #   geocode = a[0]
+  #   #   @itinerary.latitude = geocode.latitude
+  #   #   @itinerary.longitude = geocode.longitude
+  #   #   @itinerary.save
+  #     redirect_to @itinerary
+  #   else
+  #     render :new
+  #   end
+  # end
+
+  def create #new_create
     @itinerary = Itinerary.new(params[:itinerary])
     @itinerary.user = current_user
+    binding.pry
     @itinerary.user_id = current_user.id
+    a = Geocoder.search(@itinerary.address)
+    geocode = a[0]
+    binding.pry
+    @itinerary.latitude = geocode.latitude
+    @itinerary.longitude = geocode.longitude
     if @itinerary.save
-    #   a = Geocoder.search(@itinerary.title)
-    #   geocode = a[0]
-    #   @itinerary.latitude = geocode.latitude
-    #   @itinerary.longitude = geocode.longitude
-    #   @itinerary.save
+      binding.pry
       redirect_to @itinerary
     else
       render :new
     end
   end
+
+
+
 
   def show
     @itinerary = Itinerary.find(params[:id])
