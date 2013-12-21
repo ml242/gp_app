@@ -84,6 +84,7 @@ GEM
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     ffi (1.9.3)
+    flickraw (0.9.7)
     font-awesome-sass (4.0.2)
       sass-rails (>= 3.1.1)
     formatador (0.2.4)
@@ -163,6 +164,8 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-nav (0.2.3)
+      pry (~> 0.9.10)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     quiet_assets (1.0.2)
@@ -277,6 +280,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  flickraw
   font-awesome-sass
   geocoder
   gmaps4rails
@@ -288,6 +292,7 @@ DEPENDENCIES
   neat
   omniauth-facebook
   pg
+  pry-nav
   pry-rails
   quiet_assets
   rails (= 3.2.14)

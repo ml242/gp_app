@@ -13,7 +13,8 @@ gem 'bxslider-rails'
 gem 'simple_form'
 gem 'geocoder'
 gem 'gmaps4rails'
-
+gem 'jquery-rails'
+gem 'flickraw'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,7 +34,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -60,6 +60,7 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "jasmine"
   gem "pry-rails"
+  gem "pry-nav"
 end
 
 group :development do
