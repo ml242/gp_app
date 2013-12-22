@@ -89,6 +89,12 @@ class ItinerariesController < ApplicationController
     redirect_to itineraries_path
   end
 
+  def destroy
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.delete
+    redirect_to itineraries_path
+  end
+
   def add
     @item = Item.create
     @itinerary = Itinerary.find(params[:id])

@@ -85,7 +85,10 @@ GoinPlacesTestApp::Application.routes.draw do
   get 'itineraries/:id/add/' => 'itineraries#add'
 
 
-  resources :users
+  resources :users do
+    resources :itineraries
+  end
+
   resources :itineraries do
     resources :items
   end
