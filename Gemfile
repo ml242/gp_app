@@ -14,7 +14,8 @@ gem 'simple_form'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jquery-rails'
-gem 'flickraw'
+gem "flickr-objects"
+# gem 'flickraw'
 
 # Gems used only for assets and not required
 # in production environments by default.

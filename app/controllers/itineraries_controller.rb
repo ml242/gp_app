@@ -35,15 +35,17 @@ class ItinerariesController < ApplicationController
   def create #new_create
     @itinerary = Itinerary.new(params[:itinerary])
     @itinerary.user = current_user
-    binding.pry
     @itinerary.user_id = current_user.id
     a = Geocoder.search(@itinerary.address)
     geocode = a[0]
-    binding.pry
     @itinerary.latitude = geocode.latitude
     @itinerary.longitude = geocode.longitude
+    lat = @itinerary.latitude
+    lon = @itinerary.longitude
+    photos = Flickr.photos.search(lat: lat, lon: lon).shuffle!
+    photo = photos.pop(1)
+    @itinerary.img_url = photo[0].url
     if @itinerary.save
-      binding.pry
       redirect_to @itinerary
     else
       render :new

@@ -41,9 +41,6 @@ GoinPlacesTestApp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  FlickRaw.api_key=ENV['Flickr_Key']
-  FlickRaw.shared_secret=ENV['Flickr_Secret']
-
 
 
 end
