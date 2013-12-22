@@ -44,7 +44,7 @@ class ItinerariesController < ApplicationController
     lon = @itinerary.longitude
     photos = Flickr.photos.search(lat: lat, lon: lon).shuffle!
     photo = photos.pop(1)
-    @itinerary.img_url = photo[0].url
+    @itinerary.img_url = 'farm' + photo[0].farm.to_s + '.static.flickr.com' + '/' + photo[0].server.to_s + '/' + photo[0].id.to_s + '_' + photo[0].secret.to_s + '.jpg'
     if @itinerary.save
       redirect_to @itinerary
     else
