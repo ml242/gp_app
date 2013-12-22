@@ -34,7 +34,7 @@
         <%= link_to 'Edit Itinerary', edit_itinerary_path %>
       </button>
       <button class="red-red-btn-sm">
-        <%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %>
+        <%= link_to 'Delete Itinerary', @itinerary, :value => @itinerary_id, :method => :delete %>
       </button>
     </div>
 

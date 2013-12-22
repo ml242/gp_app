@@ -48,6 +48,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    binding.pry
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.delete
+    redirect_to users_show_path
   end
 
   def dashboard
