@@ -2,7 +2,7 @@
 <img src="<%= @item.img_url %>" width="25%"><br>
 
 <% if current_user.id == @itinerary.user_id %>
-<button><%= link_to 'Edit Item', edit_item_path %></button>
+<button><%= link_to 'Edit Item', edit_itinerary_item_path %></button>
 <button><%= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?" %>
 </button><br>
 Description: <%= @item.description %><br>
