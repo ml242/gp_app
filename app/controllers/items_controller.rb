@@ -25,7 +25,6 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-
   end
 
   def show
@@ -37,6 +36,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    binding.pry
     if params["itinerary_id"] != ""
       @item.itineraries << Itinerary.find(params["itinerary_id"])
       @item.update_attributes(params[:item])
