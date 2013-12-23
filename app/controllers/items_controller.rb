@@ -30,8 +30,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @itineraries = Itinerary.where(user_id: current_user.id)
-    @link = Link.new
+    @itinerary = Itinerary.find(params[:itinerary_id])
+    @link = Link.new(:item_id => :id)
+    @itin_new = Itinerary.new(:user_id => current_user.id, :title => "new itinerary")
   end
 
   def update

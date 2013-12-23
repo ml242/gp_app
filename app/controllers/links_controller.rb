@@ -9,6 +9,17 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.create(params[:link])
+      if @link.itinerary_id == nil
+        i = Itinerary.create
+        i.add_item(@link.item_id)
+        i.user_id = current_user.id
+        i.title = "New Itinerary"
+        pic = Item.find(@link.item.id)
+        i.img_url = pic.img_url
+        i.save
+        binding.pry
+        @link.itinerary_id = i.id
+      end
     redirect_to("/itineraries/#{params[:link][:itinerary_id]}")
   end
 

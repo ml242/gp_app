@@ -1,16 +1,27 @@
+<!-- old news
 <br><br>
-<%= link_to 'Add a New Place', new_item_path %><br><br>
+<%#= link_to 'Add a New Place', new_item_path %><br><br>
 <br><br>
-<%= link_to 'Edit Item', edit_item_path %> | <%= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?" %>
 
-<h3><%= @item.name %></h1>
+<!---- if else for edit or delete item ------>
+
+<%# binding.pry %>
+
+<%# if current_user.id == @itinerary.user_id %>
+<%#= link_to 'Edit Item', edit_item_path %>  <%#= link_to 'Delete Item', @item, :method => :delete, :confirm => "Are you sure?" %>
+<%# end %>
+
+
+
+<h1><%= @item.name %></h1>
 <img src="<%= @item.img_url %>" width="25%"><br>
 Description: <%= @item.description %><br>
 
 
 <%= form_for(@link) do |f| %>
 
-  <%= f.collection_select :itinerary_id, Itinerary.where(:user_id => current_user.id), :id, :title, :prompt => "Select itinerary" %>
+  <%= f.collection_select :itinerary_id, Itinerary.where(:user_id => current_user.id) << @itin_new, :id, :title, :prompt => "Select itinerary" %>
+
 
   <input id="item_id" name="link[item_id]" type="hidden" value="<%= @item.id %>">
 
