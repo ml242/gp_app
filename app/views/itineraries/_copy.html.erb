@@ -1,0 +1,8 @@
+  <div class="copy-add-item">
+    <% if current_user.id != @itinerary.user_id %>
+    <div class="copy-itinerary">
+      <button class="red-red-btn copy"><%= link_to 'COPY', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
+      </button>
+    </div>
+    <% end %>
+  </div>

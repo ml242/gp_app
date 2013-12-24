@@ -8,24 +8,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <div>
     <% if current_user %>
     <%= render 'layouts/nav' %>
     <% end %>
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div id="fb-root"></div>
-    <div id="fb-root"></div>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=524588784306811";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=524588784306811";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -45,6 +39,5 @@
     <% end %>
 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
-    <div>
 </body>
 </html>
