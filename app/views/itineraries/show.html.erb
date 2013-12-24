@@ -20,7 +20,7 @@
 
 
         <button class="red-red-btn sm">
-          <%= link_to 'ADD ITEM', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
+          <%= link_to 'Add Item', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
         </button>
 
 
@@ -79,20 +79,6 @@
           <% if current_user.id == @itinerary.user_id %>
           <%#= render 'checkbox' %> <!-- edit and del btns too -->
           <!----- put this back in partial ---->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <% end %>
 
           <div class="itin-content">
@@ -155,7 +141,7 @@
 
 
 
-
+    </div>
 
 
 <!----- end of add item to itin button (old) ----->
