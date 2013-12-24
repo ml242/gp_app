@@ -1,17 +1,48 @@
-<h2>SignZZZZZ in</h2>
+<div class="welcome-container">
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.email_field :email, :placeholder => 'Enter your email address' %>
+    <div class="login-page-wrapper">
+    <%= image_tag("gp-white-drop.png", class: "gp-title") %>
+
+    <div class="login-page-container">
+      <div class="login-form-box">
 
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+        <div class="login-form">
+         <%= form_for(:user, :as => :user, :url => registration_path(:user)) do |f| %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+          <%= f.text_field :name, :placeholder => 'Enter your username', :style => "width : 125%", :required => true %>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+            <%= f.email_field :email, :placeholder => 'Enter your email address', :style => "width : 125%", :required => true %>
 
-<%= render "users/shared/links" %>
+
+              <%= f.password_field :password, :placeholder => 'Enter your password', :style => "width : 125%", :required => true  %>
+
+
+                <%= f.password_field :password_confirmation, :placeholder => 'Enter password again', :style => "width : 125%", :required => true  %>
+
+                  <div class="spacer">
+                  <button="red-red-btn-sm"><%= f.submit "Login", :class => 'red-red-btn-sm' %><% end %></button>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="fb-button">
+          <a href="http://localhost:3000/users/auth/facebook"><img src="http://www.elterre.com/images/connect/facebook.png"></a>
+          <%#= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %></div>
+        </div>
+          <%#= render "users/shared/links" %>
+</div>
+
+    <script>
+    $.backstretch([
+      "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528b276e41166_1.JPG",
+      "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52a077d68d6e9_1.JPG",
+      "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52850d6938211_1.JPG",
+      "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528aedf6ec3df_1.JPG",
+      "http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_528c2ebf28f7c_1.JPG"
+      ],
+      {duration: 10000, fade: 950});
+    </script>
