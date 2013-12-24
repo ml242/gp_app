@@ -1,6 +1,8 @@
 <div class="welcome-container">
+
     <div class="login-page-wrapper">
     <%= image_tag("gp.png", class: "gp-title") %>
+
     <div class="login-page-container">
       <div class="login-form-box">
 
@@ -8,31 +10,28 @@
         <div class="login-form">
          <%= form_for(:user, :as => :user, :url => registration_path(:user)) do |f| %>
 
-         <div><%= f.label :name %><br />
-          <%= f.text_field :name, :autofocus => true %></div>
+          <%= f.text_field :name, :placeholder => 'Enter your username', :style => "width : 125%", :required => true %>
 
-          <div><%= f.label :email %><br />
-            <%= f.email_field :email, :autofocus => true %></div>
+            <%= f.email_field :email, :placeholder => 'Enter your email address', :style => "width : 125%", :required => true %>
 
-            <div><%= f.label :password %><br />
-              <%= f.password_field :password %></div>
 
-              <div><%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation %></div>
+              <%= f.password_field :password, :placeholder => 'Enter your password', :style => "width : 125%", :required => true  %>
 
-                <div class="login-btn"><%= f.submit "Sign up" %><% end %></div>
+
+                <%= f.password_field :password_confirmation, :placeholder => 'Enter password again', :style => "width : 125%", :required => true  %>
+
+                  <div class="spacer">
+                  <button="red-red-btn-sm"><%= f.submit "Login", :class => 'red-red-btn-sm' %><% end %></button>
+                  </div>
 
               </div>
-
             </div>
-
           </div>
         </div>
 
         <div id="fb-button">
           <a href="http://localhost:3000/users/auth/facebook"><img src="http://www.elterre.com/images/connect/facebook.png"></a>
           <%#= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'fb-link' %></div>
-
- </div>
+        </div>
           <%#= render "users/shared/links" %>
 </div>
