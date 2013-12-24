@@ -1,9 +1,13 @@
 <div class="itin-show-container">
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 5b11b1c... fixed the styling
   <% if flash[:notice] %>
   <div id="notice"><%= flash[:notice] %></div>
   <% end %>
 
+<<<<<<< HEAD
 
 
 
@@ -48,6 +52,31 @@
 
 
   <div class="itin-show-box">
+=======
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52b062e136d519a7"></script>
+
+  <div class="itin-title show">
+    <%= @itinerary.title %>
+  </div>
+
+  <div class="itin-user">
+    Itinerary by: <%= @itinerary.user.name %>
+  </div>
+
+  <div class="itin-show-edit">
+    <% if current_user.id == @itinerary.user_id %>
+    <button class="red-red-btn sm"><%= link_to 'Edit Itinerary', edit_itinerary_path %></button>
+
+
+
+        <button class="red-red-btn sm">
+          <%= link_to 'Add Item', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
+        </button>
+
+
+    <button class="red-red-btn sm"><%= link_to 'Delete Itinerary', @itinerary, :method => :delete, :confirm => "Are you sure?" %></button>
+    <% end %>
+>>>>>>> parent of 5b11b1c... fixed the styling
 
     <div class="itin-show-img"> <!-- ITIN IMAGE -->
       <img src="<%= @itinerary.img_url %>" width='60%'>
@@ -58,6 +87,7 @@
 
     <!--  <div class="itin-show-desc"> ---->
 
+<<<<<<< HEAD
     <!-- ITIN Description -->
 
 
@@ -77,15 +107,51 @@
 
   <%= @itinerary.description %><br>
 </div>
+=======
+  </div>
+  <div class="col-four"></div>
 
-<!- Itinerary TOP END ->
+  <div class="itin-show-box">
+    <div class="itin-show-img"> <!-- ITIN IMAGE -->
+      <img src="<%= @itinerary.img_url %>" width='60%'>
+    </div>
+    <div class="itin-show-desc">
+      <!-- ITIN Description -->
+      <div class="add-this">
+        Itinerary created on: <%= @itinerary.created_at.to_formatted_s(:long) %>
+        <!-- AddThis Button BEGIN -->
+        <a
+        class="addthis_button"
+        addthis:url="http://goinplac.es"
+        addthis:title="Going Places"
+        addthis:description="Great Escape Artists Steal (itineraries)">
+
+
+        <%= image_tag("share.png", class: "sharer-small") %>
+      </a><br>
+      <!-- AddThis Button END --><br>
+>>>>>>> parent of 5b11b1c... fixed the styling
+
+      <%= @itinerary.description %><br>
+    </div>
+  </div>
 
 
 
 <!--- going to partial item content ---->
+<<<<<<< HEAD
   <!-- gets the items for each itinerary
   <div class="itin-inside-box">
     <div class="item-content">
+=======
+
+
+
+<div class="itin-show-item">
+    <!-- gets the items for each itinerary here -->
+    <div class="each-item-inside-box">
+      <% @links.each do |link| %>
+>>>>>>> parent of 5b11b1c... fixed the styling
       <div class="each-itin-item">
         <div class="itin-content">
 here -->
@@ -127,6 +193,7 @@ here -->
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -134,3 +201,53 @@ here -->
   <%= render 'copy' %>
   <!- copy button ->
 </div> <!- itin show containter ->
+=======
+
+<!----- checkbox button goes here ------>
+      </div>
+      <% end %>
+
+
+
+    </div>
+
+
+
+  </div> <!-- ends itin show box -->
+
+
+
+<%# render 'item-content' %>
+
+
+
+  <div class="copy-add-item">
+    <% if current_user.id != @itinerary.user_id %>
+    <div class="copy-itinerary">
+      <button class="red-red-btn copy"><%= link_to 'COPY', "/itineraries/#{@itinerary.id}/copy", :method => :get, :confirm => "Do you want to copy this entire itinerary?" %>
+      </button>
+      <% end %>
+
+
+
+
+
+    </div>
+
+
+<!----- end of add item to itin button (old) ----->
+
+      <div class="add-item-to-itin-btn">
+        <%# if current_user.id == @itinerary.user_id %>
+
+          <%#= link_to 'ADD ITEM', "/itineraries/#{@itinerary.id}/items/new", :method => :get %>
+
+
+
+        <%#= link_to 'SEARCH ITEMS', "/items", :method => :get, :class => "red-red-btn sm"  %>
+        <%# end %>
+      </div>
+    </div>
+
+
+>>>>>>> parent of 5b11b1c... fixed the styling
