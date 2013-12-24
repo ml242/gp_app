@@ -1,17 +1,22 @@
-<section class="new-item-container">
-<h1>Edit "<%= @itinerary.title %>"</h1>
+<div class="new-item-container">
+
   <%= form_for(@itinerary) do |f| %>
+<h1 class="new-item-field">Edit "<%= @itinerary.title %>"</h1>
   <%= f.label :title %>
-  <%= f.text_field :title %><br>
+  <%= f.text_field :title, :class => "new-item-field"  %><br>
 
   <%= f.label :img_url %>
-  <%= f.text_field :img_url %><br>
+  <%= f.text_field :img_url, :class => "new-item-field"   %><br>
 
   <%= f.label :description %>
   <%= f.text_area :description, size: "60x12" %><br>
 
-  <%= f.submit "Update itinerary" %>
-  <%= link_to "Cancel", itineraries_path %>
+   <div class="movin-right">
+  <%= f.submit "Update", :class => "red-red-btn" %>
+  <%= button_to "Cancel", items_path, :class => "red-red-btn"  %>
+  </div>
+
   <% end %>
 
-</section>
+
+</div>

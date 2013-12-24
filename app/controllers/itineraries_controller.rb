@@ -16,26 +16,14 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new
   end
 
-  # def create
-  #   @itinerary = Itinerary.new(params[:itinerary])
-  #   @itinerary.user = current_user
-  #   @itinerary.user_id = current_user.id
-  #   if @itinerary.save
-  #   #   a = Geocoder.search(@itinerary.title)
-  #   #   geocode = a[0]
-  #   #   @itinerary.latitude = geocode.latitude
-  #   #   @itinerary.longitude = geocode.longitude
-  #   #   @itinerary.save
-  #     redirect_to @itinerary
-  #   else
-  #     render :new
-  #   end
-  # end
+
+  #TODO Make an if else for address statement. There is no error handling for blank lat long.
 
   def create #new_create
     @itinerary = Itinerary.new(params[:itinerary])
     @itinerary.user = current_user
     @itinerary.user_id = current_user.id
+    @itinerary.address = @itinerary.address
     a = Geocoder.search(@itinerary.address)
     geocode = a[0]
     @itinerary.latitude = geocode.latitude
@@ -48,6 +36,7 @@ class ItinerariesController < ApplicationController
     if @itinerary.save
       redirect_to @itinerary
     else
+      @itinerary.destroy
       render :new
     end
   end
