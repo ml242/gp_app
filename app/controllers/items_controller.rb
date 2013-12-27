@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  #TODO add geocode stuff here
   def create
     @item = Item.new(params[:item])
     if params["itinerary_id"] != ""

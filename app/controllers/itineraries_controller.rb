@@ -18,7 +18,7 @@ class ItinerariesController < ApplicationController
 
 
   #TODO Make an if else for address statement. There is no error handling for blank lat long.
-
+  #TODO Make the lat long a method
   def create #new_create
     @itinerary = Itinerary.new(params[:itinerary])
     @itinerary.user = current_user
