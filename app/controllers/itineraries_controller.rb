@@ -25,7 +25,7 @@ class ItinerariesController < ApplicationController
     @itinerary.user_id = current_user.id
     # IF location is entered and img_url is blank
     if ( @itinerary.location != nil ) && ( @itinerary.img_url == nil )
-        geocode_function(@itinerary)
+        @itinerary.geocode_function
     end
     # @itinerary.address = @itinerary.address
     # a = Geocoder.search(@itinerary.address)
