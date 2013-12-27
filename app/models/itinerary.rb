@@ -16,12 +16,17 @@ class Itinerary < ActiveRecord::Base
     self.save
   end
 
-  # def geocode(itinerary)
-  #   a = Geocoder.search(itinerary.title)
-  #   geocode = a[0]
-  #   itinerary.latitude = geocode.latitude
-  #   itinerary.longitude = geocode.longitude
-  #   itinerary.save
-  # end
+  def geocode_function(itinerary)
+    a = Geocoder.search(self.address)
+    geocode = a[0]
+    self.latitude = geocode.latitude
+    self.longitude = geocode.longitude
+    lat = @itinerary.latitude
+    lon = @itinerary.longitude
+    photos = Flickr.photos.search(lat: lat, lon: lon).shuffle!
+    photo = photos.pop(1)
+    self.img_url = 'http://farm' + photo[0].farm.to_s + '.static.flickr.com' + '/' + photo[0].server.to_s + '/' + photo[0].id.to_s + '_' + photo[0].secret.to_s + '.jpg'
+    self.save
+  end
 
 end

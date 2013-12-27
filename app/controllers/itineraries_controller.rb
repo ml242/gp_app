@@ -23,16 +23,20 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new(params[:itinerary])
     @itinerary.user = current_user
     @itinerary.user_id = current_user.id
-    @itinerary.address = @itinerary.address
-    a = Geocoder.search(@itinerary.address)
-    geocode = a[0]
-    @itinerary.latitude = geocode.latitude
-    @itinerary.longitude = geocode.longitude
-    lat = @itinerary.latitude
-    lon = @itinerary.longitude
-    photos = Flickr.photos.search(lat: lat, lon: lon).shuffle!
-    photo = photos.pop(1)
-    @itinerary.img_url = 'http://farm' + photo[0].farm.to_s + '.static.flickr.com' + '/' + photo[0].server.to_s + '/' + photo[0].id.to_s + '_' + photo[0].secret.to_s + '.jpg'
+    # IF location is entered and img_url is blank
+    if ( @itinerary.location != nil ) && ( @itinerary.img_url == nil )
+        geocode_function(@itinerary)
+    end
+    # @itinerary.address = @itinerary.address
+    # a = Geocoder.search(@itinerary.address)
+    # geocode = a[0]
+    # @itinerary.latitude = geocode.latitude
+    # @itinerary.longitude = geocode.longitude
+    # lat = @itinerary.latitude
+    # lon = @itinerary.longitude
+    # photos = Flickr.photos.search(lat: lat, lon: lon).shuffle!
+    # photo = photos.pop(1)
+    # @itinerary.img_url = 'http://farm' + photo[0].farm.to_s + '.static.flickr.com' + '/' + photo[0].server.to_s + '/' + photo[0].id.to_s + '_' + photo[0].secret.to_s + '.jpg'
     if @itinerary.save
       redirect_to @itinerary
     else
