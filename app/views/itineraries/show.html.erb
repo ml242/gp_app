@@ -103,6 +103,7 @@
 <!--           <div class="each-itin-item"> -->
           <div class="itin-inside-box">
           <% item = link.item %>
+            <%# binding.pry %>
           <h2><%= item.name %></h2>
           <div class="itin-content">
            <a href="<%= @itinerary.id %>/items/<%= item.id %>"><img class="itin-img" src="<%= item.img_url %>"></a>

@@ -23,20 +23,21 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new(params[:itinerary])
     @itinerary.user = current_user
     @itinerary.user_id = current_user.id
+    # binding.pry
     # IF location is entered and img_url is blank
-    if ( @itinerary.location != nil ) && ( @itinerary.img_url == nil )
-        @itinerary.geocode_function
-    end
-    # @itinerary.address = @itinerary.address
-    # a = Geocoder.search(@itinerary.address)
-    # geocode = a[0]
-    # @itinerary.latitude = geocode.latitude
-    # @itinerary.longitude = geocode.longitude
-    # lat = @itinerary.latitude
-    # lon = @itinerary.longitude
-    # photos = Flickr.photos.search(lat: lat, lon: lon).shuffle!
-    # photo = photos.pop(1)
-    # @itinerary.img_url = 'http://farm' + photo[0].farm.to_s + '.static.flickr.com' + '/' + photo[0].server.to_s + '/' + photo[0].id.to_s + '_' + photo[0].secret.to_s + '.jpg'
+    # if ( @itinerary.address != nil ) && ( @itinerary.img_url == nil )
+    #     @itinerary.geocode_function
+    # end
+    @itinerary.address = @itinerary.address
+    a = Geocoder.search(@itinerary.address)
+    geocode = a[0]
+    @itinerary.latitude = geocode.latitude
+    @itinerary.longitude = geocode.longitude
+    lat = @itinerary.latitude
+    lon = @itinerary.longitude
+    photos = Flickr.photos.search(lat: lat, lon: lon).shuffle!
+    photo = photos.pop(1)
+    @itinerary.img_url = 'http://farm' + photo[0].farm.to_s + '.static.flickr.com' + '/' + photo[0].server.to_s + '/' + photo[0].id.to_s + '_' + photo[0].secret.to_s + '.jpg'
     if @itinerary.save
       redirect_to @itinerary
     else
@@ -76,13 +77,15 @@ class ItinerariesController < ApplicationController
     redirect_to @new_itinerary
   end
 
-  def delete
-    @itinerary = Itinerary.find(params[:id])
-    @itinerary.delete
-    redirect_to itineraries_path
-  end
+  # def delete
+  #   binding.pry
+  #   @itinerary = Itinerary.find(params[:id])
+  #   @itinerary.delete
+  #   redirect_to itineraries_path
+  # end
 
   def destroy
+    binding.pry
     @itinerary = Itinerary.find(params[:id])
     @itinerary.delete
     redirect_to itineraries_path
