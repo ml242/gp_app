@@ -1,8 +1,8 @@
 <div class="user-show-container">
 
-  <h2 class="itin-title">
-    Your Itineraries
-  </h2>
+  <div class="itin-title">
+    <h1 class="itineraries-index">Your Itineraries</h1>
+  </div>
 
   <% if flash[:notice] %>
   <div id="notice"><%= flash[:notice] %></div>
@@ -11,7 +11,7 @@
 
 
 <div class="new-itinerary">
-  <button class="red-red-btn"><%= link_to 'NEW ITINERARY', new_itinerary_path %></button>
+  <button class="red-red-btn"><%= link_to 'Create Itinerary', new_itinerary_path %></button>
 </div>
 
 <div class="user-itin-info">
@@ -22,8 +22,8 @@
   <div class="inside-user-content">
     <h2><%= itinerary.title %></h2>
 
-    <div class="user-content">
-      <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>"></a>
+    <div class="itin-content">
+      <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>"></a><br>
       <%= itinerary.description %>
     </div>
 
@@ -31,10 +31,10 @@
 
     <div class="itin-show-edit-sm">
       <button class="red-red-btn-sm">
-        <%= link_to 'Edit Itinerary', edit_itinerary_path(itinerary.id) %>
+        <%= link_to 'Edit', edit_itinerary_path(itinerary.id) %>
       </button>
       <button class="red-red-btn-sm">
-        <%= link_to 'Delete Itinerary', itinerary_path(itinerary.id), :method => :delete, :confirm => "Are you sure?" %>
+        <%= link_to 'Delete', itinerary_path(itinerary.id), :method => :delete, :confirm => "Are you sure?" %>
       </button>
     </div>
 

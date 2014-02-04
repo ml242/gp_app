@@ -8,6 +8,9 @@
 // WELCOME INDEX //
 ///////////////////
 
+body
+  background-color: rgba(15,10,5,.01)
+
 .welcome-container
   @include outer-container
   .login-page-wrapper
@@ -15,6 +18,8 @@
     @include shift(3)
     background-color: rgba(0,0,0,.4)
     padding: 10px
+    border-radius: 10px
+    margin-top: 1.25%
   .gp-title
     margin: 0 auto
     display: block
@@ -37,7 +42,9 @@
     padding-bottom: 15px
 
 .login-form
-  text-align: center
+  margin-right: 18%
+  input
+    border-radius: 5px
 
 .login-btn
   font-size: 25px
@@ -49,22 +56,13 @@
 #important
   display: inline-block
 
-input
-  width: 40%
-  display: inline-block
-  //padding: 5px
-  font-size: 15px
-  //text-shadow: 0px 1px 0px #fff
-  outline: none
-  //background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe ), to(white))
-  //background: -moz-linear-gradient(top, #bcbcbe  , white)
-  //-webkit-border-radius: 3px
-  //-moz-border-radius: 3px
-  //border-radius: 3px
-  //border: 1px solid #717171  
+.spacer
+  margin-left: 8%
+  margin-top: 2%
 
 #fb-button
   text-align: center
+  margin-top: 1%
   @include span-columns(6)
   @include shift(3)
   img

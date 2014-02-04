@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  #TODO add geocode stuff here
   def create
     @item = Item.new(params[:item])
     if params["itinerary_id"] != ""
@@ -25,7 +26,6 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-
   end
 
   def show
@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    if params["itinerary_id"] != ""
+    if params["itinerary_id"] != nil
       @item.itineraries << Itinerary.find(params["itinerary_id"])
       @item.update_attributes(params[:item])
       @item.save
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
       #flash notice
     else
       @item.update_attributes(params[:item])
-      render :edit
+      redirect_to "/itineraries/#{current_user.id}"
     end
   end
 

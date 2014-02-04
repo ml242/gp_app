@@ -8,12 +8,8 @@
     <%= render 'slideshow' %>
   </div>
 
-<!--   <div class="post-new">
-    <button><%#= link_to 'NEW ITINERARY', new_itinerary_path %></button>
-  </div> -->
-
   <div class="itin-title">
-    Browse itineraries
+    <h1 class="itineraries-index">Browse itineraries</h1>
   </div>
 
   <section class="itinerary-item">
@@ -21,11 +17,10 @@
 
       <div class="itin-inside-box">
         <h2><%= itinerary.title %></h2>
-
         <div class="itin-content">
           <a href="/itineraries/<%= itinerary.id %>"><img class="itin-img" src="<%= itinerary.img_url %>"></a>
-          <%= itinerary.description %>
-        </div>
+          </div>
+        <h3><%= itinerary.description %></h3>
       </div>
 
     <% end %>
