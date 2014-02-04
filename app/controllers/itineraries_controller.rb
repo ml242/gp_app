@@ -10,6 +10,7 @@ class ItinerariesController < ApplicationController
     # @itineraries = Itinerary.where('user_id != ?',current_user.id)
     @itineraries = Itinerary.where(:user != current_user)
     @rand_itineraries = @itineraries.shuffle[1..10]
+
   end
 
   def new
