@@ -3,7 +3,7 @@
 
 <% @rand_itineraries.each do |itinerary| %>
   <%# binding.pry %>
-  <li class="images">"<%= itinerary.title %>" by <%#= itinerary.user.name %><br>
+  <li class="images"><%= itinerary.title %> by <%= itinerary.user.name %><br>
 
   <a href="/itineraries/<%= itinerary.id %>"><img src="<%= itinerary.img_url %>" width="30%"></a><br>
   <%#= itinerary.is_copy %></li>

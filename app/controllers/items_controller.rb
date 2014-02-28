@@ -14,7 +14,11 @@ class ItemsController < ApplicationController
     @item = Item.new(params[:item])
     if params["itinerary_id"] != ""
       @item.itineraries << Itinerary.find(params["itinerary_id"])
-      @item.save
+      if ( @item.location != nil ) && ( @item.img_url == nil )
+        @item.geocode_function
+      else
+        @item.save
+      end
       redirect_to "/itineraries/#{params[:itinerary_id]}"
     else
       @item.save

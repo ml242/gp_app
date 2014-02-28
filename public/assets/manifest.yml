@@ -7,10 +7,14 @@ deutsche_normalschrift_a.ttf: deutsche_normalschrift_a-204e9b72cc0d59e37ac824437
 deutsche_normalschrift_a/index.ttf: deutsche_normalschrift_a-204e9b72cc0d59e37ac82443713b5def.ttf
 deutsche_normalschrift_a.woff: deutsche_normalschrift_a-6c5a66319b75ae8d8334197a59e4c016.woff
 deutsche_normalschrift_a/index.woff: deutsche_normalschrift_a-6c5a66319b75ae8d8334197a59e4c016.woff
-checkbox-empty.png: checkbox-empty-5fb5a2394803251818ef63dca1c9a773.png
-checkbox-empty/index.png: checkbox-empty-5fb5a2394803251818ef63dca1c9a773.png
-checkbox.png: checkbox-69b3267b7312991fef228532b602cb79.png
-checkbox/index.png: checkbox-69b3267b7312991fef228532b602cb79.png
+checkbox copy.png: checkbox copy-58a0275b39f8465ee4550a73833f68d7.png
+checkbox copy/index.png: checkbox copy-58a0275b39f8465ee4550a73833f68d7.png
+checkbox-empty copy.png: checkbox-empty copy-9822553363ac260e69bb31b8f5ebf435.png
+checkbox-empty copy/index.png: checkbox-empty copy-9822553363ac260e69bb31b8f5ebf435.png
+checkbox-empty.png: checkbox-empty-1681e1cfef21641007f86f830d557cff.png
+checkbox-empty/index.png: checkbox-empty-1681e1cfef21641007f86f830d557cff.png
+checkbox.png: checkbox-2eee34003c56440ffe5302373a0564da.png
+checkbox/index.png: checkbox-2eee34003c56440ffe5302373a0564da.png
 facebook-btn.png: facebook-btn-db41256231012195add1bb7089f3a753.png
 facebook-btn/index.png: facebook-btn-db41256231012195add1bb7089f3a753.png
 fontbase.psd: fontbase-72f6ba45024791ba54bb81338e76f686.psd
@@ -59,8 +63,8 @@ white-drop.psd: white-drop-9aa7b3a500366ee2ae687a0178c2a78a.psd
 white-drop/index.psd: white-drop-9aa7b3a500366ee2ae687a0178c2a78a.psd
 application.js: application-2162d3c26e77a4e461753c6b0c5fc8eb.js
 application/index.js: application-2162d3c26e77a4e461753c6b0c5fc8eb.js
-application.css: application-2585de59cd4077cd603af94a8eacc8f0.css
-application/index.css: application-2585de59cd4077cd603af94a8eacc8f0.css
+application.css: application-ca1eb1f9e617b8b21cb6c7e9a6c29121.css
+application/index.css: application-ca1eb1f9e617b8b21cb6c7e9a6c29121.css
 fontawesome-webfont.eot: fontawesome-webfont-e742c0f297e307a74bdf4ca3c19073a2.eot
 fontawesome-webfont/index.eot: fontawesome-webfont-e742c0f297e307a74bdf4ca3c19073a2.eot
 fontawesome-webfont.svg: fontawesome-webfont-9169b7b7c593388d41dd3c339df5b86b.svg

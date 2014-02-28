@@ -18,7 +18,7 @@
       <!- buttons TOP ->
 
       <div class="itin-user">
-        Itinerary by: <%= @itinerary.user.name %>
+        Itinerary by: <%= @itinerary.user.name.titleize %>
       </div>
 
 
@@ -103,7 +103,8 @@
 <!--           <div class="each-itin-item"> -->
           <div class="itin-inside-box">
           <% item = link.item %>
-          <h2><%= item.name %></h2>
+            <%# binding.pry %>
+          <h2><%#= item.name %></h2>
           <div class="itin-content">
            <a href="<%= @itinerary.id %>/items/<%= item.id %>"><img class="itin-img" src="<%= item.img_url %>"></a>
           <br><br>

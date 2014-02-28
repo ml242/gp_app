@@ -15,6 +15,8 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jquery-rails'
 gem "flickr-objects"
+gem 'puma'
+gem 'newrelic_rpm'
 # gem 'flickraw'
 
 # Gems used only for assets and not required

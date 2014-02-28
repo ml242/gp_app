@@ -24,6 +24,11 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new(params[:itinerary])
     @itinerary.user = current_user
     @itinerary.user_id = current_user.id
+    # binding.pry
+    # IF location is entered and img_url is blank
+    # if ( @itinerary.address != nil ) && ( @itinerary.img_url == nil )
+    #     @itinerary.geocode_function
+    # end
     @itinerary.address = @itinerary.address
     a = Geocoder.search(@itinerary.address)
     geocode = a[0]
@@ -73,11 +78,12 @@ class ItinerariesController < ApplicationController
     redirect_to @new_itinerary
   end
 
-  def delete
-    @itinerary = Itinerary.find(params[:id])
-    @itinerary.delete
-    redirect_to itineraries_path
-  end
+  # def delete
+  #   binding.pry
+  #   @itinerary = Itinerary.find(params[:id])
+  #   @itinerary.delete
+  #   redirect_to itineraries_path
+  # end
 
   def destroy
     @itinerary = Itinerary.find(params[:id])
